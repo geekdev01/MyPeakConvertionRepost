@@ -55,6 +55,7 @@
     width: 100%;
     aspect-ratio: 3/5;
     box-shadow: 1px -1px 5px 1px #d4cece;
+    background: #fff;
 }
 
 .swiper-slide img {
@@ -82,7 +83,8 @@
 
 .swiper-slide div a {
     margin-top: 2em;
-    padding: .5em;
+    padding: .5em 1em;
+    font-size: 14px;
     border: 1px solid #fff;
     color: white;
 }
@@ -187,6 +189,7 @@
     .swiper-slide div a {
         margin-top: 2em;
         padding: .2em;
+        font-size: 12px;
     }
 
     .pagination_ div[class^="swiper-button"] {
