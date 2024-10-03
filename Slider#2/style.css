@@ -26,14 +26,16 @@
     font-size: 3em;
 }
 
-.container {
+.container-swiper {
+    width: 100%;
     justify-content: center;
     align-items: center;
     height: max-content;
     overflow: hidden;
 }
 
-.container2 {
+.container-swiper2 {
+    width: 100%;
     justify-content: center;
     align-items: center;
     height: max-content;
@@ -41,18 +43,20 @@
     padding: 1em 0;
 }
 
-.container .swiper {
+.container-swiper .swiper {
     width: 100%;
     padding: .5em 0;
 }
 
-.container .swiper .swiper-wrapper {
-    display: flex;
-}
 
 .swiper-slide {
     position: relative;
-    width: 100%;
+    transition: all 0.3s ease;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     aspect-ratio: 3/5;
     box-shadow: 1px -1px 5px 1px #d4cece;
     background: #fff;
@@ -67,7 +71,7 @@
 
 .swiper-slide div {
     position: absolute;
-    bottom: 3em;
+    bottom: 2em;
     left: 30%;
     width: max-content;
     text-align: center;
@@ -76,17 +80,26 @@
 }
 
 .swiper-slide div p {
-    font-size: 1.5em;
-    font-weight: 500;
+    text-align: center;
+    font-size: 28px;
     margin-bottom: 1em;
 }
 
 .swiper-slide div a {
+    text-decoration: none;
     margin-top: 2em;
-    padding: .5em 1em;
+    padding: 10px 20px;
     font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
     border: 1px solid #fff;
     color: white;
+    transition: .6s ease-in-out all;
+}
+
+.swiper-slide div a:hover {
+    background: white;
+    color: rgb(82, 80, 80);
 }
 
 .swiper2 {
@@ -110,7 +123,7 @@
     border: 1px solid #000;
 }
 
-.container2 .swiper3 {
+.container-swiper2 .swiper3 {
     margin-top: 2em;
     padding: .5em 0;
 }
@@ -147,10 +160,24 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    transition: .5s ease-in-out all;
 }
 
-.pagination_ div[class^="swiper-button"] img {
+.pagination_ div[class^="swiper-button"]:hover {
+    background: #000;
+
+}
+
+.pagination_ div[class^="swiper-button"] svg {
+    margin: 0 auto;
     width: 60%;
+    font-weight: 600;
+    color: black;
+    transition: .5s ease-in-out all;
+}
+
+.pagination_ div[class^="swiper-button"] svg:hover {
+    color: white;
 }
 
 .swiper-pagination-bullet-active {
@@ -176,48 +203,8 @@
 
 @media(max-width: 450px) {
     .swiper-slide div {
-        left: 25%;
-        bottom: .5em;
-    }
-
-    .swiper-slide div p {
-        font-size: 1em;
-        font-weight: 600;
-        margin-bottom: 1em;
-    }
-
-    .swiper-slide div a {
-        margin-top: 2em;
-        padding: .2em;
-        font-size: 12px;
-    }
-
-    .pagination_ div[class^="swiper-button"] {
-        width: 38px;
-        height: 38px;
-        background: rgba(255, 255, 255, 0.801);
-    }
-
-    .pagination_ div[class^="swiper-button"] img {
-        width: 50%;
+        left: 30%;
+        bottom: 2em;
     }
 }
 
-@media(max-width: 400px) {
-    .swiper-slide div {
-        left: 20%;
-    }
-}
-
-@media(max-width: 350px) {
-    .swiper-slide div {
-        left: 17%;
-    }
-}
-
-@media(max-width: 300px) {
-
-    .swiper-slide div {
-        left: 11%;
-    }
-}
