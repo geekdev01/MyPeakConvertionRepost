@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    background: transparent;
+}
+
+.size-guide-container {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.size-guide-container .head-text {
+    width: fit-content;
+    text-decoration: underline;
+    font-size: 20px;
+    margin: 0 auto;
+    color: rgba(66, 65, 65, 0.753);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.size-guide-container .head-text svg {
+    text-decoration: none;
+}
+
+.size-guide-container .head-text:hover {
+    color: rgba(121, 118, 118, 0.61);
+}
+
+.size-guide-container .size-guide-content {
+    position: absolute;
+    background: #fff;
+    width: 90%;
+    height: 75vh;
+    top: 5em;
+    left: 4em;
+    border-radius: 10px;
+    padding: 2em;
+    overflow: auto;
+    display: none;
+}
+
+.size-guide-container .size-guide-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.size-guide-container .size-guide-content::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.size-guide-container .size-guide-content::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+.size-guide-container .size-guide-content .guide-head1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.size-guide-container .size-guide-content .guide-head1 .text {
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.size-guide-container .size-guide-content .guide-head1 svg {
+    width: 35px;
+    cursor: pointer;
+}
+
+.size-guide-container .size-guide-content .guide-head2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.size-guide-container .size-guide-content .guide-head2 .guide-toogle {
+    width: fit-content;
+    float: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border: 1px solid rgb(192, 185, 185);
+    border-radius: 30px;
+}
+
+.size-guide-container .size-guide-content .guide-head2 .guide-toogle p {
+    font-size: 16px;
+    padding: 6px 12px;
+    color: rgb(44, 42, 42);
+    cursor: pointer;
+}
+
+.size-guide-container .size-guide-content .guide-head2 .guide-toogle p.active {
+    background: rgb(3, 3, 207);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.size-guide-container .size-guide-content .guide-content {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+}
+
+.size-guide-container .size-guide-content .guide-content .left {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.size-guide-container .size-guide-content .guide-content .left h1 {
+    text-align: left;
+}
+
+.size-guide-container .size-guide-content .guide-content .left table {
+    border-collapse: collapse;
+    width: 100%;
+    color: rgba(66, 65, 65, 0.753);
+    margin-top: 1em;
+}
+
+.size-guide-container .size-guide-content .guide-content .left table td {
+    border: 1px solid gray;
+    padding: 10px 14px;
+    width: fit-content;
+}
+
+.size-guide-container .size-guide-content .guide-content .left p {
+    margin-top: 1em;
+    color: rgba(66, 65, 65, 0.753);
+}
+
+.size-guide-container .size-guide-content .guide-content .right {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.size-guide-container .size-guide-content .guide-content .right img {
+    width: 85%;
+    height: 100%;
+    float: right;
+    margin-top: 1em;
+    object-fit: cover;
+}
+
+@media (max-width:1000px) {
+    .size-guide-container .size-guide-content {
+        width: 100%;
+        height: 100vh;
+        top: 1em;
+        left: 1em;
+        right: 1em;
+        bottom: 1em;
+        overflow-x: hidden;
+    }
+
+    .size-guide-container .size-guide-content .guide-content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .size-guide-container .size-guide-content .guide-content .right img {
+        width: 100%;
+    }
+
+    .size-guide-container .size-guide-content .guide-content .left div {
+        overflow-x: auto;
+    }
+
+    .size-guide-container .size-guide-content .guide-content .left div::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .size-guide-container .size-guide-content .guide-content .left div::-webkit-scrollbar-track {
+        background: #f0f0f0;
+    }
+
+    .size-guide-container .size-guide-content .guide-content .left div::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+}
+
+@media (max-width:400px) {
+    .size-guide-container .size-guide-content .guide-head2 {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .size-guide-container .size-guide-content .guide-head2 h1 {
+        font-size: 30px;
+    }
+
+    .size-guide-container .size-guide-content .guide-head2 p {
+        font-size: 15px;
+    }
+}
