@@ -179,6 +179,23 @@
             mediaContainer.innerHTML = '';  // Clear previous content
         }
 
+        
+    // Initialisation des écouteurs d'événements
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('story-popup');
+        const content = popup.querySelector('.story-content');
+
+        // Gestion de la fermeture du popup
+        popup.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                closeStory();
+            }
+        });    // Empêcher la propagation des clics depuis le contenu
+        content.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+    });
         function loadStory() {
             const story = stories[currentIndex];
             const mediaContainer = document.querySelector('.story-video-content');
