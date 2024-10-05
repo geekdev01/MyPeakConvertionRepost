@@ -112,18 +112,18 @@
     font-weight: bold;
 }
 
-.video-features .modal {
-    display: none;
+.video-features .story-popup {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.185);
-    z-index: 1000;
+    z-index: 10;
+    display: none;
 }
 
-.video-features .modal .modal-content {
+.video-features .story-popup .story-content {
     position: relative;
     width: 80%;
     max-width: 400px;
@@ -132,10 +132,64 @@
     margin: 50px auto;
     border-radius: 25px;
     overflow: hidden;
-    padding: 5px;
+    background: #fff;
 }
 
-.video-features .modal .modal-content .tools {
+.video-features .story-popup .story-content .content-progress-bar{
+    position: absolute;
+    background: rgba(65, 64, 64, 0.849);
+    top: 10px;
+    left: 0;
+    right: 0;
+    transform: translateX(5%);
+    height: 2px;
+    width: 90%;
+}
+
+.video-features .story-popup .story-content .progress-bar {
+    background: white;
+    height: 2px;
+    width: 0;
+}
+
+.video-features .story-popup .story-content .nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.video-features .story-popup .story-content .nav-button svg{
+    width: 25px;
+    color: #000;
+}
+
+.video-features .story-popup .story-content .nav-button.prev {
+    left: 31.5%;
+}
+
+.video-features .story-popup .story-content .nav-button.next {
+    right: 31.5%;
+}
+
+.video-features .story-popup .story-content #btn-pre:disabled {
+    opacity: 0.5;
+    cursor: no-drop;
+}
+
+.video-features .story-popup .story-content #btn-next:disabled {
+    opacity: 0.4;
+    cursor: no-drop;
+}
+
+.video-features .story-popup .story-content .tools {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -144,10 +198,10 @@
     z-index: 10;
 }
 
-.video-features .modal .modal-content .tools svg {
-    width: 30px;
+.video-features .story-popup .story-content .tools svg {
+    width: 40px;
     margin-bottom: 4px;
-    padding: 6px;
+    padding: 10px;
     background: #000;
     font-weight: bold;
     color: #fff;
@@ -155,12 +209,12 @@
     cursor: pointer;
 }
 
-.video-features .modal .modal-content .video-container {
+.video-features .story-popup .story-content .video-container {
     position: relative;
     height: 95%;
 }
 
-.video-features .modal .modal-content .video-container video {
+.video-features .story-popup .story-content .video-container video {
     position: absolute;
     top: 0;
     left: 0;
@@ -168,4 +222,5 @@
     height: 100%;
     object-fit: cover;
     border-radius: 25px;
+    z-index: 10;
 }

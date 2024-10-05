@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>instagram</title>
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
+
 </head>
+
 <body>
-    
+
     <div class="video-features">
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail" data-index="0" onclick="openStory(0)">
                         <video
                             src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
-                            data-video="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
                             muted autoplay playsinline loop class="active">
                     </div>
                     <div class="video-title">Made in 🇦🇺</div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail" data-index="1" onclick="openStory(1)">
                         <video
                             src="https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0"
                             muted autoplay playsinline loop>
@@ -32,7 +33,7 @@
                     <div class="video-title">Sizing</div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail" data-index="2" onclick="openStory(2)">
                         <video
                             src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
                             muted autoplay playsinline loop>
@@ -40,7 +41,7 @@
                     <div class="video-title">Made in 🇦🇺</div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail" data-index="4" onclick="openStory(3)">
                         <video
                             src="https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0"
                             muted autoplay playsinline loop>
@@ -48,7 +49,7 @@
                     <div class="video-title">Sizing</div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail" data-index="4" onclick="openStory(4)">
                         <video
                             src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
                             muted autoplay playsinline loop>
@@ -56,7 +57,7 @@
                     <div class="video-title">Made in 🇦🇺</div>
                 </div>
             </div>
-    
+
             <div class="pagination_">
                 <div class="swiper-button-prev">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -72,41 +73,48 @@
                 </div>
             </div>
         </div>
-    
-        <div class="modal" id="videoModal">
-            <div class="modal-content">
-                <div class="tools">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6 tools-btn-out">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6 tools-btn-pause">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6 tools-btn-play" style="display: none;">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6 tools-btn-son">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6 tools-btn-muted" style="display: none;">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-                    </svg>
-        
+
+
+        <div class="story-popup" id="story-popup">
+            <div class="story-content">
+                <div class="content-progress-bar">
+                    <div class="progress-bar" id="progress-bar"></div>
                 </div>
-        
-                <div class="video-container">
-                    <video controls>
-                        <source src="" type="video/mp4" autoplay>
-                        Your browser does not support the video tag.
-                    </video>
+
+                <button class="nav-button prev" id="btn-pre" onclick="prevStory()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button class="nav-button next" id="btn-next" onclick="nextStory()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <div class="story-media" id="story-media">
+                    <div class="tools">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-out" onclick="closeStory()">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-pause" id="play-pause-btn"
+                            onclick="togglePlayPause()">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-son" id="volume-btn" onclick="toggleVolume()">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                        </svg>
+
+                    </div>
+
+                    <div class="story-video-content">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,58 +123,209 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         new Swiper('.swiper', {
-                speed: 400,
-                slidesPerView: 4,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+            speed: 400,
+            slidesPerView: 4,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+
+        let currentIndex = 0;
+        let isMuted = false;
+        let currentVideo = null;
+        let progressBar;
+        let progressInterval;
+
+        let stories = [
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
+                duration: 10000
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0',
+                duration: 10000
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
+                duration: 10000
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0',
+                duration: 10000
+            },
+            {
+                type: 'video',
+                content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
+                duration: 10000
+            }
+        ];
+
+        function openStory(index) {
+
+            document.getElementById('story-popup').style.display = 'block';
+            currentIndex = index;
+            loadStory();
+        }
+
+        function closeStory() {
+            document.getElementById('story-popup').style.display = 'none';
+            clearInterval(interval);
+            const mediaContainer = document.querySelector('.story-video-content');
+            mediaContainer.innerHTML = '';  // Clear previous content
+        }
+
+        function loadStory() {
+            const story = stories[currentIndex];
+            const mediaContainer = document.querySelector('.story-video-content');
+            mediaContainer.innerHTML = '';  // Clear previous content
+
+
+            if (story.type === 'video') {
+                let video = document.createElement('video');
+                video.src = story.content;
+                video.autoplay = true;
+                video.controls = false;
+                mediaContainer.appendChild(video);
+                currentVideo = video;
+                currentVideo.muted = isMuted;
+            }
+
+            // Start progress bar
+            startProgressBar(story.duration);
+
+
+            // Activer ou désactiver les boutons suivant et précédent
+            updateNavigationButtons();
+
+            // Set play button state
+            document.getElementById('play-pause-btn').innerHTML = isPlaying
+                ?
+                `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke = "currentColor" class="size-6 tools-btn-pause" onclick = "videoPaused()" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                    </svg >
+                `
+                :
+                `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-play">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                    </svg>
+                `;
+        }
+
+
+        function startProgressBar(duration) {
+            progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = '0%';
+            let startTime = Date.now();
+            interval = setInterval(function () {
+                let elapsedTime = Date.now() - startTime;
+                let percentage = (elapsedTime / duration) * 100;
+                progressBar.style.width = percentage + '%';
+
+                if (percentage >= 100) {
+                    clearInterval(interval);
+                    if (currentIndex < stories.length - 1) {
+                        nextStory();
+                    }
                 }
-            });
+            }, 100);
+        }
 
-            //Affichage de la video (la storie)
-                const thumbnails = document.querySelectorAll('.video-thumbnail');
-                const modal = document.getElementById('videoModal');
-                const video = modal.querySelector('video');
+        function prevStory() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                clearInterval(interval);
+                loadStory();
+            }
+        }
 
-                thumbnails.forEach(thumbnail => {
-                    thumbnail.addEventListener('click', () => {
-                        const videoSrc = thumbnail.querySelector('video').src;
-                        video.src = videoSrc;
-                        modal.style.display = 'block';
-                        video.play();
+        function nextStory() {
+            if (currentIndex < stories.length - 1) {
+                currentIndex++;
+                clearInterval(interval);
+                loadStory();
+            }
+        }
 
-                    });
-                });
+        // Fonction pour activer ou désactiver les boutons de navigation
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('btn-pre');
+            const nextBtn = document.getElementById('btn-next');
 
-                document.querySelector('.tools-btn-out').addEventListener('click', () => {
-                    modal.style.display = 'none';
-                    video.src = '';
-                });
+            if (currentIndex === 0) {
+                prevBtn.disabled = true;  // Désactiver le bouton "Précédent" si c'est le premier statut
+            } else {
+                prevBtn.disabled = false;  // Activer le bouton si ce n'est pas le premier statut
+            }
 
-                document.querySelector('.tools-btn-pause').addEventListener('click', () => {
-                    video.pause();
-                    document.querySelector('.tools-btn-pause').style.display = 'none';
-                    document.querySelector('.tools-btn-play').style.display = 'block';
-                });
+            if (currentIndex === stories.length - 1) {
+                nextBtn.disabled = true;  // Désactiver le bouton "Suivant" si c'est le dernier statut
+            } else {
+                nextBtn.disabled = false;  // Activer le bouton si ce n'est pas le dernier statut
+            }
+        }
 
-                document.querySelector('.tools-btn-play').addEventListener('click', () => {
-                    video.play();
-                    document.querySelector('.tools-btn-pause').style.display = 'block';
-                    document.querySelector('.tools-btn-play').style.display = 'none';
-                });
+        function togglePlayPause() {
+            if (currentVideo) {
+                if (currentVideo.paused) {
+                    currentVideo.play();
+                    document.getElementById('play-pause-btn').innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke = "currentColor" class="size-6 tools-btn-pause" onclick = "videoPaused()" >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                    </svg >
+                `;
+                    isPlaying = true;
+                    startProgressBar(stories[currentIndex].duration);  // Resume progress bar
+                } else {
+                    currentVideo.pause();
+                    document.getElementById('play-pause-btn').innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-play">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                    </svg>
+                `;
+                    isPlaying = false;
+                    clearInterval(interval);  // Stop progress bar on pause
+                }
+            }
+        }
 
-                document.querySelector('.tools-btn-son').addEventListener('click', () => {
-                    video.muted = true;
-                    document.querySelector('.tools-btn-son').style.display = 'none';
-                    document.querySelector('.tools-btn-muted').style.display = 'block';
-                });
-
-                document.querySelector('.tools-btn-muted').addEventListener('click', () => {
-                    video.muted = false;
-                    document.querySelector('.tools-btn-muted').style.display = 'none';
-                    document.querySelector('.tools-btn-son').style.display = 'block';
-                });
+        function toggleVolume() {
+            if (currentVideo) {
+                isMuted = !isMuted;
+                currentVideo.muted = isMuted;
+                document.getElementById('volume-btn').innerHTML = isMuted
+                    ?
+                    `
+                    <<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-muted">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                        </svg>
+                `
+                    :
+                    `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 tools-btn-son">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                        </svg>
+                `;
+            }
+        }
 
     </script>
 </body>
+
 </html>
