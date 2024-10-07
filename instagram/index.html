@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>instagram</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -35,26 +34,26 @@
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="2" onclick="openStory(2)">
                         <video
-                            src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
+                            src="https://section.store/cdn/shop/videos/c/vp/21cde963b6ef45d58fd201614d0cb238/21cde963b6ef45d58fd201614d0cb238.SD-480p-0.9Mbps-33343173.mp4?v=0"
                             muted autoplay playsinline loop>
                     </div>
-                    <div class="video-title">Made in 🇦🇺</div>
+                    <div class="video-title">How to ✔️</div>
                 </div>
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="4" onclick="openStory(3)">
                         <video
-                            src="https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0"
+                            src="https://section.store/cdn/shop/videos/c/vp/6c404e122c414631964df7d26c43fe71/6c404e122c414631964df7d26c43fe71.SD-480p-0.9Mbps-33343862.mp4?v=0"
                             muted autoplay playsinline loop>
                     </div>
-                    <div class="video-title">Sizing</div>
+                    <div class="video-title">New in ✨</div>
                 </div>
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="4" onclick="openStory(4)">
-                        <video
-                            src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
-                            muted autoplay playsinline loop>
+                        <img
+                            src="https://section.store/cdn/shop/files/pexels-shvets-production-8972333.jpg?v=1725278696"
+                            alt="slide5">
                     </div>
-                    <div class="video-title">Made in 🇦🇺</div>
+                    <div class="video-title">Woaw! ✨</div>
                 </div>
             </div>
 
@@ -128,7 +127,7 @@
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            }
+            },
         });
 
         let currentIndex = 0;
@@ -141,27 +140,22 @@
             {
                 type: 'video',
                 content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
-                duration: 10000
             },
             {
                 type: 'video',
                 content: 'https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0',
-                duration: 10000
             },
             {
                 type: 'video',
-                content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
-                duration: 10000
+                content: 'https://section.store/cdn/shop/videos/c/vp/21cde963b6ef45d58fd201614d0cb238/21cde963b6ef45d58fd201614d0cb238.SD-480p-0.9Mbps-33343173.mp4?v=0',
             },
             {
                 type: 'video',
-                content: 'https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0',
-                duration: 10000
+                content: 'https://section.store/cdn/shop/videos/c/vp/6c404e122c414631964df7d26c43fe71/6c404e122c414631964df7d26c43fe71.SD-480p-0.9Mbps-33343862.mp4?v=0',
             },
             {
                 type: 'video',
-                content: 'https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0',
-                duration: 10000
+                content: '//section.store/cdn/shop/videos/c/vp/96fc518d0bcb42f29f159a035a1e3c6d/96fc518d0bcb42f29f159a035a1e3c6d.HD-1080p-2.5Mbps-33344044.mp4?v=0',
             }
         ];
 
@@ -174,7 +168,6 @@
 
         function closeStory() {
             document.getElementById('story-popup').style.display = 'none';
-            clearInterval(interval);
             const mediaContainer = document.querySelector('.story-video-content');
             mediaContainer.innerHTML = '';  // Clear previous content
         }
@@ -202,7 +195,7 @@
             mediaContainer.innerHTML = '';  // Clear previous content
 
 
-            if (story.type === 'video') {
+            // if (story.type === 'video') {
                 let video = document.createElement('video');
                 video.src = story.content;
                 video.autoplay = true;
@@ -210,10 +203,10 @@
                 mediaContainer.appendChild(video);
                 currentVideo = video;
                 currentVideo.muted = isMuted;
-            }
+            // }
 
             // Start progress bar
-            startProgressBar(story.duration);
+            startProgressBar(video);
 
 
             // Activer ou désactiver les boutons suivant et précédent
@@ -239,28 +232,24 @@
         }
 
 
-        function startProgressBar(duration) {
+        function startProgressBar(video) {
             progressBar = document.getElementById('progress-bar');
-            progressBar.style.width = '0%';
-            let startTime = Date.now();
-            interval = setInterval(function () {
-                let elapsedTime = Date.now() - startTime;
-                let percentage = (elapsedTime / duration) * 100;
-                progressBar.style.width = percentage + '%';
 
-                if (percentage >= 100) {
-                    clearInterval(interval);
-                    if (currentIndex < stories.length - 1) {
-                        nextStory();
+            video.addEventListener("timeupdate", ()=>{
+                
+                let progress = (video.currentTime/video.duration)*100;
+                progressBar.style.width = progress + '%';
+                     if (progress >= 100) {
+                        if (currentIndex < stories.length - 1) {
+                            nextStory();
+                        }
                     }
-                }
-            }, 100);
+            });
         }
 
         function prevStory() {
             if (currentIndex > 0) {
                 currentIndex--;
-                clearInterval(interval);
                 loadStory();
             }
         }
@@ -268,7 +257,6 @@
         function nextStory() {
             if (currentIndex < stories.length - 1) {
                 currentIndex++;
-                clearInterval(interval);
                 loadStory();
             }
         }
@@ -302,7 +290,6 @@
                     </svg >
                 `;
                     isPlaying = true;
-                    startProgressBar(stories[currentIndex].duration);  // Resume progress bar
                 } else {
                     currentVideo.pause();
                     document.getElementById('play-pause-btn').innerHTML = `
@@ -313,7 +300,6 @@
                     </svg>
                 `;
                     isPlaying = false;
-                    clearInterval(interval);  // Stop progress bar on pause
                 }
             }
         }
