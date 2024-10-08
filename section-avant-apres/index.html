@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Before/After Comparison</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Before / After Image #5</h1>
+            <h2>Explore our collections</h2>
+            <p>Uncover the best in quality and style</p>
+        </div>
+
+        <div class="comparison-section">
+            <div class="features features-left">
+                <div class="feature">
+                    <img src="https://section.store/cdn/shop/files/paint_1.svg?v=1723114926" alt="Discover Style"
+                        class="feature-icon">
+                    <h3 class="feature-title">Discover Style</h3>
+                    <p class="feature-description">Find the perfect pieces to match your unique aesthetic.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="https://section.store/cdn/shop/files/paint.svg?v=1723114944" alt="Customizable"
+                        class="feature-icon">
+                    <h3 class="feature-title">Customizable</h3>
+                    <p class="feature-description">Make your furniture truly yours with our customization options.</p>
+                </div>
+            </div>
+
+            <div class="image-compare">
+                <div class="img-container img-right">
+                    <img src="https://section.store/cdn/shop/files/pexels-jose-miguel-nivar-201204374-16372721.jpg?v=1719958195"
+                        alt="Old Chair">
+                </div>
+                <div class="divider"></div>
+                <div class="slider slider-handle">
+                    <div class="slider-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+
+                    </div>
+
+                </div>
+                <div class="img-container img-left">
+                    <img src="https://section.store/cdn/shop/files/pexels-jose-miguel-nivar-201204374-17488644.jpg?v=1719958171"
+                        alt="New Chair">
+                </div>
+                <!-- </div> -->
+            </div>
+
+            <div class="features features-right">
+                <div class="feature">
+                    <img src="https://section.store/cdn/shop/files/table.svg?v=1723114963" alt="Room Inspiration"
+                        class="feature-icon">
+                    <h3 class="feature-title">Room Inspiration</h3>
+                    <p class="feature-description">Explore our room inspiration section for curated looks and styling
+                        tips.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <img src="https://section.store/cdn/shop/files/globe.svg?v=1723114980" alt="Eco-Friendly"
+                        class="feature-icon">
+                    <h3 class="feature-title">Eco-Friendly</h3>
+                    <p class="feature-description">Make a conscious choice with our eco-friendly furniture collection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+            const slider = document.querySelector('.slider');
+                const imgLeft = document.querySelector('.img-left');
+                const divider = document.querySelector('.divider');
+                const comparisonWrapper = document.querySelector('.image-compare');
+
+                let isSliding = false;
+
+                // Initialiser la largeur de l'image de gauche et la position du divider à 50%
+                imgLeft.style.width = '50%';
+                divider.style.left = '50%';
+
+                // Fonction pour mettre à jour les positions
+                function updatePositions(position) {
+                    // Limiter la position entre 0 et 100
+                    if (position < 0) position = 0;
+                    if (position > 100) position = 100;
+
+                    // Mettre à jour la position du slider, du divider, et la largeur de l'image de gauche
+                    slider.style.left = `${position}%`;
+                    imgLeft.style.width = `${position}%`;
+                    divider.style.left = `${position}%`;
+                }
+
+                // Événements de souris
+                slider.addEventListener('mousedown', () => {
+                    isSliding = true;
+                });
+
+                window.addEventListener('mouseup', () => {
+                    isSliding = false;
+                });
+
+                window.addEventListener('mousemove', (event) => {
+                    if (isSliding) {
+                        let rect = comparisonWrapper.getBoundingClientRect();
+                        let position = ((event.clientX - rect.left) / rect.width) * 100;
+                        updatePositions(position);
+                    }
+                });
+
+                // Événements tactiles
+                slider.addEventListener('touchstart', () => {
+                    isSliding = true;
+                });
+
+                window.addEventListener('touchend', () => {
+                    isSliding = false;
+                });
+
+                window.addEventListener('touchmove', (event) => {
+                    if (isSliding) {
+                        let rect = comparisonWrapper.getBoundingClientRect();
+                        let touch = event.touches[0]; // Prendre le premier contact
+                        let position = ((touch.clientX - rect.left) / rect.width) * 100;
+                        updatePositions(position);
+                    }
+                });
+
+    </script>
+</body>
+
+</html>
