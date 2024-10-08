@@ -135,23 +135,24 @@
    .trending-section .swiper .nav-scroll {
        position: relative;
        display: flex;
-       justify-content: center;
+       justify-content: end;
        align-content: center;
-
    }
 
    .nav-scroll .swiper-scrollbar {
+    position: absolute;
+    top: 50% !important;
        width: 100%;
-       transform: translateX(-11%);
+       transform: translateX(-8%);
        background: #ccc9c9;
        border-radius: 2px;
-       position: relative;
+      
    }
 
    .nav-scroll .navigation-buttons {
        margin-left: 90%;
        display: flex;
-       gap: 1rem;
+       gap: .8rem;
    }
 
    .trending-section .swiper .nav-scroll .navigation-buttons .nav-button {
