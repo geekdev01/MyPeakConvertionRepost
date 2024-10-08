@@ -488,6 +488,7 @@
            border-radius: 2px;
            position: relative;
        }
+
    }
 
    @media (max-width: 1025px) {
@@ -505,6 +506,11 @@
 
        .nav-scroll-best1 .navigation-buttons {
            display: none;
+       }
+
+       .nav-scroll-best1 .swiper-scrollbar {
+           transform: translateX(-0%);
+
        }
 
    }
