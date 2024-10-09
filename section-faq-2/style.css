@@ -207,12 +207,9 @@
   }
 
   @media (max-width: 400px) {
-      body {
-          width: 100%;
-      }
-
       .container .menu-container .menu {
-          padding-left: 25em;
+        margin-left: -1em;
+          padding-left: 21.2em;
           padding-bottom: 1em;
       }
 
