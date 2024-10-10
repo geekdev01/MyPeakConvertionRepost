@@ -42,7 +42,7 @@
    }
 
    .container-faq .content-faq .header h2 {
-       margin-top: .8em;
+       margin-top: .5em;
        font-size: 42px;
        color: #1F2D54;
        font-weight: 900;
@@ -52,7 +52,7 @@
        display: grid;
        grid-template-columns: repeat(2, 2fr);
        gap: 1rem;
-       margin-top: 1em;
+       margin-top: 1.5em;
    }
 
    .container-faq .content-faq .content-wrapper .product-image {
@@ -140,6 +140,10 @@
    }
 
    @media (max-width: 760px) {
+
+    .container-faq .content-faq {
+            padding: 1.4em .1em;
+        }
        .container-faq .content-faq .content-wrapper {
            display: grid;
            grid-template-columns: repeat(1, 2fr);
