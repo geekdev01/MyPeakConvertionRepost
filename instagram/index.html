@@ -16,42 +16,58 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="video-thumbnail" data-index="0" onclick="openStory(0)">
-                        <video
-                            src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
-                            muted autoplay playsinline loop class="active">
+                    <div class="video-thumbnail zoom" data-index="0" onclick="openStory(0)">
+                        <div class="rays">
+                            <div class="ray"></div>
+                            <div class="ray"></div>
+                        </div>
+                        <div class="gradient-border">
+                            <video
+                                src="https://section.store/cdn/shop/videos/c/vp/9440f94df8884dcf867b4997b603e4c4/9440f94df8884dcf867b4997b603e4c4.HD-1080p-2.5Mbps-34087131.mp4?v=0"
+                                muted autoplay playsinline loop>
+                        </div>
                     </div>
                     <div class="video-title">Made in 🇦🇺</div>
                 </div>
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="1" onclick="openStory(1)">
-                        <video
-                            src="https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0"
-                            muted autoplay playsinline loop>
+                        <div class="gradient-border">
+                            <video
+                                src="https://section.store/cdn/shop/videos/c/vp/abfc09dc1c8a4e04b9491fcb1a103072/abfc09dc1c8a4e04b9491fcb1a103072.HD-1080p-2.5Mbps-34087282.mp4?v=0"
+                                muted autoplay playsinline loop>
+                        </div>
+                        
                     </div>
                     <div class="video-title">Sizing</div>
                 </div>
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="2" onclick="openStory(2)">
-                        <video
-                            src="https://section.store/cdn/shop/videos/c/vp/21cde963b6ef45d58fd201614d0cb238/21cde963b6ef45d58fd201614d0cb238.SD-480p-0.9Mbps-33343173.mp4?v=0"
-                            muted autoplay playsinline loop>
+                        <div class="gradient-border">
+                            <video
+                                src="https://section.store/cdn/shop/videos/c/vp/21cde963b6ef45d58fd201614d0cb238/21cde963b6ef45d58fd201614d0cb238.SD-480p-0.9Mbps-33343173.mp4?v=0"
+                                muted autoplay playsinline loop>
+                        </div>
+                       
                     </div>
                     <div class="video-title">How to ✔️</div>
                 </div>
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="4" onclick="openStory(3)">
-                        <video
-                            src="https://section.store/cdn/shop/videos/c/vp/6c404e122c414631964df7d26c43fe71/6c404e122c414631964df7d26c43fe71.SD-480p-0.9Mbps-33343862.mp4?v=0"
-                            muted autoplay playsinline loop>
+                        <div class="gradient-border">
+                            <video
+                                src="https://section.store/cdn/shop/videos/c/vp/6c404e122c414631964df7d26c43fe71/6c404e122c414631964df7d26c43fe71.SD-480p-0.9Mbps-33343862.mp4?v=0"
+                                muted autoplay playsinline loop>
+                        </div>
+                        
                     </div>
                     <div class="video-title">New in ✨</div>
                 </div>
                 <div class="swiper-slide">
                     <div class="video-thumbnail" data-index="4" onclick="openStory(4)">
-                        <img
-                            src="https://section.store/cdn/shop/files/pexels-shvets-production-8972333.jpg?v=1725278696"
-                            alt="slide5">
+                        <div class="gradient-border">
+<img src="https://section.store/cdn/shop/files/pexels-shvets-production-8972333.jpg?v=1725278696" alt="slide5">
+                        </div>
+                       
                     </div>
                     <div class="video-title">Woaw! ✨</div>
                 </div>
@@ -121,14 +137,41 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        new Swiper('.swiper', {
+        const swiper = new Swiper('.swiper', {
             speed: 400,
             slidesPerView: 4,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            on: {
+                init: function () {
+                    updateButtonsVisibility(this);
+                },
+                slideChange: function () {
+                    updateButtonsVisibility(this);
+                }
+            }
         });
+
+        function updateButtonsVisibility(swiper) {
+            const prevBtn = document.querySelector('.swiper-button-prev');
+            const nextBtn = document.querySelector('.swiper-button-next');
+
+            // Si on est au premier slide, masquer le bouton "prev"
+            if (swiper.isBeginning) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+
+            // Si on est au dernier slide, masquer le bouton "next"
+            if (swiper.isEnd) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'block';
+            }
+        }
 
         let currentIndex = 0;
         let isMuted = false;
@@ -172,23 +215,23 @@
             mediaContainer.innerHTML = '';  // Clear previous content
         }
 
-        
-    // Initialisation des écouteurs d'événements
-    document.addEventListener('DOMContentLoaded', () => {
-        const popup = document.getElementById('story-popup');
-        const content = popup.querySelector('.story-content');
 
-        // Gestion de la fermeture du popup
-        popup.addEventListener('click', (event) => {
-            if (event.target === popup) {
-                closeStory();
-            }
-        });    // Empêcher la propagation des clics depuis le contenu
-        content.addEventListener('click', (event) => {
-            event.stopPropagation();
+        // Initialisation des écouteurs d'événements
+        document.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('story-popup');
+            const content = popup.querySelector('.story-content');
+
+            // Gestion de la fermeture du popup
+            popup.addEventListener('click', (event) => {
+                if (event.target === popup) {
+                    closeStory();
+                }
+            });    // Empêcher la propagation des clics depuis le contenu
+            content.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
         });
-
-    });
         function loadStory() {
             const story = stories[currentIndex];
             const mediaContainer = document.querySelector('.story-video-content');
@@ -196,13 +239,13 @@
 
 
             // if (story.type === 'video') {
-                let video = document.createElement('video');
-                video.src = story.content;
-                video.autoplay = true;
-                video.controls = false;
-                mediaContainer.appendChild(video);
-                currentVideo = video;
-                currentVideo.muted = isMuted;
+            let video = document.createElement('video');
+            video.src = story.content;
+            video.autoplay = true;
+            video.controls = false;
+            mediaContainer.appendChild(video);
+            currentVideo = video;
+            currentVideo.muted = isMuted;
             // }
 
             // Start progress bar
@@ -235,15 +278,15 @@
         function startProgressBar(video) {
             progressBar = document.getElementById('progress-bar');
 
-            video.addEventListener("timeupdate", ()=>{
-                
-                let progress = (video.currentTime/video.duration)*100;
+            video.addEventListener("timeupdate", () => {
+
+                let progress = (video.currentTime / video.duration) * 100;
                 progressBar.style.width = progress + '%';
-                     if (progress >= 100) {
-                        if (currentIndex < stories.length - 1) {
-                            nextStory();
-                        }
+                if (progress >= 100) {
+                    if (currentIndex < stories.length - 1) {
+                        nextStory();
                     }
+                }
             });
         }
 
