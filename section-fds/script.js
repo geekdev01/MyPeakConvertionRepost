@@ -70,6 +70,7 @@ const questions = Array.from(document.querySelectorAll('.fds-question span:first
 
 btnClose.addEventListener('click', () => {
     searchResultsBox.style.display = 'none';
+    btnClose.style.display = 'none';
     searchInput.value = '';
 });
 
@@ -85,6 +86,7 @@ searchInput.addEventListener('input', (e) => {
     const filteredQuestions = questions.filter(q =>
         q.text.toLowerCase().includes(searchText)
     );
+    
 
     searchResultsBox.innerHTML = filteredQuestions
         .map(q => `<div class="fds-search-results">${q.text}</div>`)
