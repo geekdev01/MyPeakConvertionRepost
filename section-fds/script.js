@@ -88,11 +88,18 @@ searchInput.addEventListener('input', (e) => {
     );
     
 
-    searchResultsBox.innerHTML = filteredQuestions
-        .map(q => `<div class="fds-search-results">${q.text}</div>`)
-        .join('');
+    if (filteredQuestions.length === 0) {
+        searchResultsBox.innerHTML = `<div class="fds-search-results-empty">Il n'y a aucun résultat pour « ${searchText} »</div>`;
 
-    searchResultsBox.style.display = filteredQuestions.length ? 'block' : 'none';
+    }else{
+        searchResultsBox.innerHTML = filteredQuestions
+            .map(q => `<div class="fds-search-results">${q.text}</div>`)
+            .join('');
+    }
+    
+
+    // searchResultsBox.style.display = filteredQuestions.length ? 'block' : 'none';
+    searchResultsBox.style.display = 'block';
 });
 
 searchResultsBox.addEventListener('click', (e) => {

@@ -99,10 +99,21 @@
     text-align: left;
     padding: .7em 0;
     max-height: 300px;
-    font-size: 16px;
+    font-size: 15px;
     color: #161616;
-    overflow-y: auto;
+    transition: all .3s ease-in-out;
 }
+
+.fds-container .fds-hero .fds-search-container .fds-search-results-box .fds-search-results-empty {
+    background: white;
+    text-align: center;
+    padding: 1em 0;
+    max-height: 300px;
+    font-size: 14px;
+    color: #6A6A6A;
+}
+
+
 
 .fds-container .fds-hero .fds-search-container .fds-search-results-box .fds-search-results:hover {
     cursor: pointer;
