@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Newletter - Popup</title>
+</head>
+
+<body>
+    <!-- Premier popup (coin inférieur gauche) -->
+    <div class="nlp-welcome-popup" id="welcomePopup" onclick="openSecondPopup()">
+        <h3 class="welcome-heading">WELCOME DISCOUNT OF 10%</h3>
+        <button class="nlp-close-button" onclick="closeWelcomePopup()">
+            <svg width="14" height="14" viewBox="0 0 14 14">
+                <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Popup principal (newsletter) -->
+    <div class="nlp-newsletter-overlay" id="newsletterOverlay">
+        <div class="newsletter-popup">
+            <img src="https://berlin-lifestyle.myshopify.com/cdn/shop/files/newsletter.jpg?v=1690375711&width=550"
+                alt="Newsletter promotion" class="newsletter-image">
+            <div class="newsletter-content">
+                <button class="nlp-close-button btn-close" onclick="closeNewsletterPopup()">
+                    <svg width="14" height="14" viewBox="0 0 14 14">
+                        <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+                <h2 class="newsletter-title">SIGN UP TO OUR NEWSLETTER & RECEIVE 10% OFF YOUR FIRST ORDER</h2>
+                <p class="newsletter-description">Get the latest updates, exclusive deals, and insider news.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="E-mail" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-button">
+                        SUBSCRIBE
+                        <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Afficher le premier popup après un délai
+        setTimeout(() => {
+            document.getElementById('welcomePopup').style.display = 'block';
+        }, 2000);
+
+        // Fermer le premier popup et ouvrir le second
+        function closeWelcomePopup() {
+            const welcomePopup = document.getElementById('welcomePopup');
+            welcomePopup.classList.add('hidden');
+
+            // Ouvrir le popup newsletter après un court délai
+            openSecondPopup();
+        }
+
+        //oubrir le second popup
+        function openSecondPopup() {
+                // Ouvrir le popup newsletter après un court délai
+                setTimeout(() => {
+                    document.getElementById('newsletterOverlay').classList.add('active');
+                }, 300);
+            }
+
+        // Fermer le popup newsletter
+        function closeNewsletterPopup() {
+            document.getElementById('newsletterOverlay').classList.remove('active');
+        }
+
+        // Fermer le popup newsletter en cliquant en dehors
+        document.getElementById('newsletterOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'newsletterOverlay') {
+                closeNewsletterPopup();
+            }
+        });
+    </script>
+</body>
+
+</html>
