@@ -51,8 +51,9 @@
    .container-faq .content-faq .content-wrapper {
        display: grid;
        grid-template-columns: repeat(2, 2fr);
-       gap: 1rem;
        margin-top: 1.5em;
+       padding: 0 2em;
+       padding-right: 6em;
    }
 
    .container-faq .content-faq .content-wrapper .product-image {
@@ -83,7 +84,7 @@
        display: flex;
        justify-content: space-between;
        align-items: center;
-       padding: 1.2rem;
+       padding: 1.2rem 1rem;
        background: rgba(252, 241, 241, 0.218);
        color: #1F2D54;
        width: 100%;
@@ -141,15 +142,23 @@
 
    @media (max-width: 760px) {
 
-    .container-faq .content-faq {
-            padding: 1.4em .1em;
-        }
+       .container-faq .content-faq {
+           padding: 1.4em .1em;
+       }
+
        .container-faq .content-faq .content-wrapper {
            display: grid;
            grid-template-columns: repeat(1, 2fr);
+           padding: 0 1em;
        }
 
        .container-faq .content-faq .content-wrapper .tab .tab-header span {
            font-size: 18px;
        }
    }
+
+          @media (max-width: 500px) {
+              .container-faq .content-faq .content-wrapper {
+                  padding: 0 .5em;
+              }
+          }
