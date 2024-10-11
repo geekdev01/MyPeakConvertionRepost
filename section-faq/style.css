@@ -26,7 +26,9 @@
 
    .container-faq .content-faq {
        padding: 2em;
+       padding-bottom: 3.5em;
        background: rgba(252, 241, 241, 0.218);
+        border-bottom: 1px solid #f2f2f2;
    }
 
    .container-faq .content-faq .header {
@@ -66,16 +68,15 @@
    .container-faq .content-faq .content-wrapper .tabs-container {
        display: flex;
        flex-direction: column;
-       justify-content: space-between;
    }
 
    .container-faq .content-faq .content-wrapper .tab {
-       border-top: .1px solid #ddd;
+       border-top: 1px solid #f2f2f2;
        overflow: hidden;
    }
 
    .container-faq .content-faq .content-wrapper .last-tab {
-       border-bottom: .1px solid #ddd;
+       border-bottom: 1px solid #f2f2f2;
        overflow: hidden;
    }
 
@@ -157,8 +158,8 @@
        }
    }
 
-          @media (max-width: 500px) {
-              .container-faq .content-faq .content-wrapper {
-                  padding: 0 .5em;
-              }
-          }
+   @media (max-width: 500px) {
+       .container-faq .content-faq .content-wrapper {
+           padding: 0 .5em;
+       }
+   }
