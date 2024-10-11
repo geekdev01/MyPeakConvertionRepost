@@ -18,6 +18,7 @@ function setActiveMenuItem() {
         if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
             menuItems.forEach(item => item.classList.remove('active'));
             menuItems[index].classList.add('active');
+            document.querySelector('.fds-menu-select-items').classList.remove('active');
         }
     });
 }
@@ -50,6 +51,7 @@ menuItems.forEach(item => {
         e.preventDefault();
         const targetId = item.getAttribute('href').slice(1);
         const targetSection = document.getElementById(targetId);
+        
 
         window.scrollTo({
             top: targetSection.offsetTop - 20,
