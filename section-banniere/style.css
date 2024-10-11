@@ -180,6 +180,10 @@
         font-size: 30px;
     }
 
+    .ban-hero-section .ban-hero-slider .nav-buttons {
+        opacity: 1;
+    }
+
     .ban-hero-section .ban-hero-slider .nav-buttons .nav-button {
         width: 28px;
         height: 28px;
@@ -212,15 +216,8 @@
         left: 6px;
     }
 
-    .ban-hero-section .ban-hero-slider .nav-buttons .nav-prev:hover {
-        left: 2px;
-    }
-
     .ban-hero-section .ban-hero-slider .nav-buttons .nav-next {
         right: 6px;
     }
 
-    .ban-hero-section .ban-hero-slider .nav-buttons .nav-next:hover {
-        right: 2px;
-    }
 }
