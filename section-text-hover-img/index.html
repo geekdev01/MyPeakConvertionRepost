@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Clothing Range</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section class="clothing-range">
+        <div class="background-image"></div>
+        <div class="content">
+            <p class="content-head">Categories</p>
+            <div class="categories">
+                <h1 class="category"
+                    data-image="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero1-2.5x-min.webp?v=1686901151&width=1500">
+                    Carefree Classics</h1>
+                <h1 class="category middle"
+                    data-image="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero2-2.5x-min.webp?v=1686901154&width=1500">
+                    Everyday Essentials</h1>
+                <h1 class="category last"
+                    data-image="https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero3-2.5x-min.webp?v=1686901156&width=1500">
+                    Mellow Outfits</h1>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const backgroundImage = document.querySelector('.background-image');
+        const categories = document.querySelectorAll('.category');
+        // let currentCategory = null;
+        let activeCategory = null;
+
+        function changeBackground(imageSrc) {
+            backgroundImage.style.opacity = '0';
+            backgroundImage.style.backgroundImage = `url(${imageSrc})`;
+            backgroundImage.style.opacity = '1';
+        }
+
+        function setActiveCategory(category) {
+            if (activeCategory) {
+                activeCategory.classList.remove('active');
+            }
+            category.classList.add('active');
+            activeCategory = category;
+        }
+
+
+        categories.forEach(category => {
+            category.addEventListener('mouseenter', () => {
+                const imageSrc = category.getAttribute('data-image');
+                // if (currentCategory !== category) {
+                changeBackground(imageSrc);
+                setActiveCategory(category);
+                // }
+            });
+        });
+
+        // Set initial background
+        changeBackground('https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero1-2.5x-min.webp?v=1686901151&width=1500');
+        setActiveCategory(categories[0]);
+    </script>
+</body>
+
+</html>
