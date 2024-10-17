@@ -165,13 +165,69 @@ body {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 550px) {
+
+    .clothing-range .content .categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .clothing-range .content .categories .middle {
-        margin-left: 0;
+        margin-left: 22%;
     }
 
     .clothing-range .content .categories .last {
-        margin-left: 0;
+        margin-left: 28%;
+    }
+}
+
+@media (max-width: 475px) {
+    .clothing-range .content .categories .middle {
+        margin-left: 16%;
+    }
+
+    .clothing-range .content .categories .last {
+        margin-left: 24%;
+    }
+}
+
+@media (max-width: 415px) {
+    .clothing-range .content .categories .middle {
+        margin-left: 11%;
+    }
+
+    .clothing-range .content .categories .last {
+        margin-left: 19%;
+    }
+}
+
+@media (max-width: 375px) {
+    .clothing-range .content .categories .middle {
+        margin-left: 1em;
+    }
+
+    .clothing-range .content .categories .last {
+        margin-left: 1.5em;
+    }
+}
+
+@media (max-width: 340px) {
+    .clothing-range .content .categories .middle {
+        margin-left: .5em;
+    }
+
+    .clothing-range .content .categories .last {
+        margin-left: 1.3em;
+    }
+}
+
+@media (max-width: 300px) {
+    .clothing-range .content .categories .middle {
+        margin-left: .1em;
+    }
+
+    .clothing-range .content .categories .last {
+        margin-left: .5em;
     }
 }
