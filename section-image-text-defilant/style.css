@@ -217,14 +217,10 @@
 
 @media (max-width: 700px) {
     .mega-deal-section .content-wrapper {
-            padding: 5rem 4rem 5rem 4rem;
-        }
-    .mega-deal-section .content-wrapper .mega-title {
-            font-size: 30px;
-        }
-                .mega-deal-section .image-wrapper img{
-                    margin-top: -2.5em;
-                    background: red !important;
-                }
-}
+        padding: 6rem 4rem 6rem 4rem;
+    }
 
+    .mega-deal-section .content-wrapper .mega-title {
+        font-size: 30px;
+    }
+}
