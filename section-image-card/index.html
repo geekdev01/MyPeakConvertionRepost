@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Scroll Effect</title>
+    <style>
+        :root {
+
+            --COLOR-WHITE: #ffffff;
+            --COLOR-WHITE-DARKEN: #f2f2f2;
+            --COLOR-WHITE-ALPHA-10: rgba(255, 255, 255, 0.1);
+            --COLOR-WHITE-ALPHA-20: rgba(255, 255, 255, 0.2);
+            --COLOR-WHITE-ALPHA-25: rgba(255, 255, 255, 0.25);
+            --COLOR-WHITE-ALPHA-50: rgba(255, 255, 255, 0.5);
+            --COLOR-WHITE-ALPHA-60: rgba(255, 255, 255, 0.6);
+            --COLOR-BLACK: #000000;
+
+            --FONT-STACK-HEADING: "Zurich Extended", sans-serif;
+            --FONT-STYLE-HEADING: normal;
+            --FONT-STYLE-HEADING-ITALIC: italic;
+            --FONT-ADJUST-HEADING: 0.75;
+
+            --FONT-WEIGHT-HEADING: 700;
+            --FONT-WEIGHT-HEADING-LIGHT: 400;
+            --FONT-WEIGHT-HEADING-MEDIUM: 900;
+            --FONT-WEIGHT-HEADING-BOLD: 800;
+
+
+            --FONT-ADJUST-BADGES: 0.95;
+
+            --FONT-STACK-BUTTON: "Neuzeit Office Soft Rounded", sans-serif;
+            --FONT-STYLE-BUTTON: normal;
+            --FONT-STYLE-BUTTON-ITALIC: italic;
+            --FONT-ADJUST-BUTTON: 0.8;
+
+            --FONT-WEIGHT-BUTTON: 700;
+            --FONT-WEIGHT-BUTTON-MEDIUM: 700;
+            --FONT-WEIGHT-BUTTON-BOLD: 700;
+
+
+            --BUTTON-TEXT-CAPS: uppercase;
+            --HEADING-TEXT-CAPS: none;
+            --SUBHEADING-TEXT-CAPS: uppercase;
+            --LABEL-TEXT-CAPS: uppercase;
+            --FONT-SIZE-INPUT: 1.05rem;
+            --RADIUS: 8px;
+            --RADIUS-SMALL: 8px;
+            --RADIUS-TINY: 8px;
+            --RADIUS-BADGE: 3px;
+            --RADIUS-CHECKBOX: 4px;
+            --RADIUS-TEXTAREA: 8px;
+            --PRODUCT-MEDIA-PADDING-TOP: 130.0%;
+            --BORDER-WIDTH: 1px;
+            --STROKE-WIDTH: 12px;
+            --SITE-WIDTH: 1440px;
+            --SITE-WIDTH-NARROW: 840px;
+            --COLOR-UPSELLS-BG: #f7f6f4;
+            --COLOR-UPSELLS-TEXT: #0B0B0B;
+            --COLOR-UPSELLS-TEXT-LIGHTEN: #3e3e3e;
+            --COLOR-UPSELLS-DISABLED-GREY-DARKEN: rgba(11, 11, 11, 0.45);
+            --UPSELLS-HEIGHT: 100px;
+            --UPSELLS-IMAGE-WIDTH: 30%;
+            --collection-sticky-bar-height: 0px;
+            --collection-image-padding-top: 60%;
+
+            --drawer-width: 400px;
+            --drawer-transition: transform 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
+            --gutter: 60px;
+            --gutter-mobile: 20px;
+            --grid-gutter: 20px;
+            --grid-gutter-mobile: 35px;
+            --inner: 20px;
+            --inner-tablet: 18px;
+            --inner-mobile: 16px;
+            --grid: repeat(4, minmax(0, 1fr));
+            --grid-tablet: repeat(3, minmax(0, 1fr));
+            --grid-mobile: repeat(2, minmax(0, 1fr));
+            --megamenu-grid: repeat(4, minmax(0, 1fr));
+            --grid-row: 1 / span 4;
+            --scrollbar-width: 0px;
+            --overlay: #000;
+            --overlay-opacity: 1;
+            --swatch-width: 38px;
+            --swatch-height: 26px;
+            --swatch-size: 32px;
+            --swatch-size-mobile: 30px;
+            --move-offset: 20px;
+            --autoplay-speed: 2200ms;
+            --filter-bg: none;
+            --product-filter-bg: none;
+        }
+    </style>
+    <script
+        src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/vendor.js?v=164905933048751944601728326762"
+        defer="defer"></script>
+    <script src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/theme.js?v=4702478480723348211728326762"
+        defer="defer"></script>
+    <link
+        href="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/theme.css?v=164671730736373076851728326762"
+        rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript">
+        if (window.MSInputMethodContext && document.documentMode) {
+            var scripts = document.getElementsByTagName('script')[0];
+            var polyfill = document.createElement("script");
+            polyfill.defer = true;
+            polyfill.src = "//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/ie11.js?v=164037955086922138091728326762";
+
+            scripts.parentNode.insertBefore(polyfill, scripts);
+
+            document.documentElement.classList.add('ie11');
+        } else {
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        }
+
+        let root = '/';
+        if (root[root.length - 1] !== '/') {
+            root = `${root}/`;
+        }
+
+        window.theme = {
+            routes: {
+                root: root,
+                cart_url: "\/cart",
+                cart_add_url: "\/cart\/add",
+                cart_change_url: "\/cart\/change",
+                shop_url: "https:\/\/palo-alto-theme-vibrant.myshopify.com",
+                searchUrl: '/search',
+                predictiveSearchUrl: '/search/suggest',
+                product_recommendations_url: "\/recommendations\/products"
+            },
+            assets: {
+                photoswipe: '//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/photoswipe.js?v=162613001030112971491728326762',
+                smoothscroll: '//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/smoothscroll.js?v=37906625415260927261728326762',
+                no_image: "//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/MODA-black_1024x.png?v=1700098115",
+                swatches: '//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/swatches.json?v=68602439080364731671728326762',
+                base: "//palo-alto-theme-vibrant.myshopify.com/cdn/shop/t/116/assets/"
+            },
+            strings: {
+                add_to_cart: "Add to Cart",
+                cart_acceptance_error: "You must accept our terms and conditions.",
+                cart_empty: "Your cart is currently empty.",
+                cart_price: "Price",
+                cart_quantity: "Quantity",
+                cart_items_one: "{{ count }} item",
+                cart_items_many: "{{ count }} items",
+                cart_title: "Cart",
+                cart_total: "Total",
+                continue_shopping: "Continue Shopping",
+                free: "Free",
+                limit_error: "Sorry, looks like we don\u0026#39;t have enough of this product.",
+                preorder: "Pre-Order",
+                remove: "Remove",
+                sale_badge_text: "Sale",
+                saving_badge: "Save {{ discount }}",
+                saving_up_to_badge: "Save up to {{ discount }}",
+                sold_out: "Sold Out",
+                subscription: "Subscription",
+                unavailable: "Unavailable",
+                unit_price_label: "Unit price",
+                unit_price_separator: "per",
+                zero_qty_error: "Quantity must be greater than 0.",
+                delete_confirm: "Are you sure you wish to delete this address?",
+                newsletter_product_availability: "Notify Me When It’s Available"
+            },
+            icons: {
+                plus: '<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-toggle-plus" viewBox="0 0 192 192"><path d="M30 96h132M96 30v132" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                minus: '<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-toggle-minus" viewBox="0 0 192 192"><path d="M30 96h132" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                close: '<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 192 192"><path d="M150 42 42 150M150 150 42 42" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            },
+            settings: {
+                animationsEnabled: true,
+                cartType: "drawer",
+                enableAcceptTerms: false,
+                enableInfinityScroll: false,
+                enablePaymentButton: false,
+                gridImageSize: "cover",
+                gridImageAspectRatio: 1.3,
+                mobileMenuBehaviour: "link",
+                productGridHover: "image",
+                savingBadgeType: "percentage",
+                showSaleBadge: true,
+                showSoldBadge: true,
+                showSavingBadge: true,
+                quickBuy: "quick_buy",
+                suggestArticles: false,
+                suggestCollections: false,
+                suggestProducts: true,
+                suggestPages: false,
+                suggestionsResultsLimit: 5,
+                currency_code_enable: false,
+                hideInventoryCount: true,
+                colorSwatchesType: "theme",
+                atcButtonShowPrice: true,
+            },
+            sizes: {
+                mobile: 480,
+                small: 768,
+                large: 1024,
+                widescreen: 1440
+            },
+            moneyFormat: "${{amount}}",
+            moneyWithCurrencyFormat: "${{amount}}",
+            subtotal: 0,
+            current_iso_code: "USD",
+            info: {
+                name: 'Palo Alto'
+            },
+            version: '5.9.1'
+        };
+        window.PaloAlto = window.PaloAlto || {};
+        window.slate = window.slate || {};
+        window.isHeaderTransparent = false;
+        window.stickyHeaderHeight = 60;
+        window.lastWindowWidth = window.innerWidth || document.documentElement.clientWidth;
+    </script>
+</head>
+
+<body>
+    <div id="shopify-section-template--23601596236054__section_sticky_image_cards_nhpr7h"
+        class="peakconversion-section">
+        <!-- /sections/section-sticky-image-cards.liquid -->
+        <style>
+            @font-face {
+                font-family: 'Zurich';
+                src: url(fonts/Zurich\ Bold.otf);
+            }
+
+            #stickyImageCards--template--23601596236054__section_sticky_image_cards_nhpr7h {
+                --PT: 80px;
+                --PB: 80px;
+                --radius: 34px;
+                --bg: #fff7f2;
+            }
+        </style>
+        <section id="stickyImageCards--template--23601596236054__section_sticky_image_cards_nhpr7h"
+            class="sticky-image-cards section-padding text-left sticky-image-cards--image-fifty sticky-image-cards--sticky text-dark img-in"
+            data-section-id="template--23601596236054__section_sticky_image_cards_nhpr7h"
+            data-section-type="sticky-image-cards" data-sticky-card-layout-mobile="sticky"
+            style="--aspect-ratio-desktop: 2; --aspect-ratio-mobile: 1;">
+            <div class="sticky-image-cards__body wrapper--full-padded" data-sticky-card-body="">
+                <div class="sticky-image-cards__content" data-sticky-card-content="">
+                    <div class="sticky-text sticky-text--static"
+                        style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36); --row-height: 447px;"
+                        data-sticky-card-text="">
+                        <div class="sticky-text__inner">
+                            <div class="sticky-text__subheading subheading-text main-subheading">Everyday essentials
+                            </div>
+                            <div class="sticky-text__heading h2" style="font-family: 'Zurich', sans-serif;">Designed to
+                                empower you to express your unique sense of
+                                style with confidence.</div>
+                            <div class="sticky-text__buttons main-buttons">
+                                <div class="sticky-text__button main-buttons__item">
+                                    <a href="/collections/all" class="btn btn--solid btn--medium btn--black"
+                                        aria-label="Shop our collection">
+                                        Shop our collection
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sticky-text sticky-text--static"
+                        style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36); --row-height: 447px;"
+                        data-sticky-card-text="">
+                        <div class="sticky-text__inner">
+                            <div class="sticky-text__heading h2" style="font-family: 'Zurich', sans-serif;">Discover
+                                timeless pieces and chic ensembles to elevate
+                                your
+                                world.</div>
+                            <div class="sticky-text__buttons main-buttons">
+                                <div class="sticky-text__button main-buttons__item">
+                                    <a href="/collections/homepage" class="btn btn--solid btn--medium btn--black"
+                                        aria-label="Shop Bestsellers">
+                                        Shop Bestsellers
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sticky-text sticky-text--static"
+                        style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36); --row-height: 447px;"
+                        data-sticky-card-text="">
+                        <div class="sticky-text__inner">
+                            <div class="sticky-text__subheading subheading-text main-subheading">Summer 2024</div>
+                            <div class="sticky-text__heading h2" style="font-family: 'Zurich', sans-serif;">Stand out
+                                wherever you go. Our latest lookbook has
+                                dropped
+                                and is ready to shop.</div>
+                            <div class="sticky-text__buttons main-buttons">
+                                <div class="sticky-text__button main-buttons__item">
+                                    <a href="/pages/lookbook" class="btn btn--solid btn--medium btn--black"
+                                        aria-label="View lookbook">
+                                        View lookbook
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sticky-image-cards__aside" data-sticky-card-aside="">
+
+
+                    <div class="sticky-image-cards__wrapper spillover" data-sticky-card-wrapper="" data-index="0"
+                        style="--row-height: 447px; --item-height: 671px; --item-double-height: 1342px;">
+                        <div class="sticky-image-cards__holder" data-sticky-card-holder="">
+                            <div class="sticky-image-cards__inner" data-sticky-card-inner="">
+                                <div class="sticky-image-cards__image" data-sticky-card-image="">
+
+                                    <div class="image-fill image-wrapper aspect-ratio" style=" ">
+                                        <figure class="lazy-image background-size-cover" style="">
+                                            <img src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?crop=center&amp;height=1200&amp;v=1718727423&amp;width=967"
+                                                alt="pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg"
+                                                width="967" height="1200" loading="lazy"
+                                                sizes="(min-width: 1024px) calc((100vw - 120px) * 0.5), (min-width: 768px) calc((100vw - 40px) / 4), calc(100vw - 40px)"
+                                                srcset="
+//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=180 180w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=240 240w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=300 300w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=360 360w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=400 400w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=460 460w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=540 540w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=560 560w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=590 590w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=606 606w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=630 630w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=670 670w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=720 720w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=738 738w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=770 770w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=814 814w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=900 900w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/pipe-dream-black-tops-alohas-578862_dfcad7e0-2b8f-41b3-982f-c9a899cd12fe.jpg?v=1718727423&amp;width=967 967w"
+                                                class="" style="object-position:50.3216% 15.1495%;border-radius: 32px;">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="sticky-text sticky-text--static"
+                                    style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36);"
+                                    data-sticky-card-text="">
+                                    <div class="sticky-text__inner">
+                                        <div class="sticky-text__subheading subheading-text main-subheading">Everyday
+                                            essentials</div>
+                                        <div class="sticky-text__heading h2" style="font-family: 'Zurich', sans-serif;">
+                                            Designed to empower you to express your
+                                            unique
+                                            sense of style with confidence.</div>
+                                        <div class="sticky-text__buttons main-buttons">
+                                            <div class="sticky-text__button main-buttons__item">
+                                                <a href="/collections/all" class="btn btn--solid btn--medium btn--black"
+                                                    aria-label="Shop our collection">
+                                                    Shop our collection
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sticky-image-cards__wrapper spillover" data-sticky-card-wrapper="" data-index="1"
+                        style="--row-height: 447px; --item-height: 641px; --item-double-height: 1282px;">
+                        <div class="sticky-image-cards__holder" data-sticky-card-holder="">
+                            <div class="sticky-image-cards__inner" data-sticky-card-inner="">
+                                <div class="sticky-image-cards__image" data-sticky-card-image="">
+
+                                    <div class="image-fill image-wrapper aspect-ratio" style=" ">
+                                        <figure class="lazy-image background-size-cover" style="">
+                                            <img src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?crop=center&amp;height=2953&amp;v=1666894896&amp;width=2362"
+                                                alt="java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg"
+                                                width="2362" height="2953" loading="lazy"
+                                                sizes="(min-width: 1024px) calc((100vw - 120px) * 0.5), (min-width: 768px) calc((100vw - 40px) / 4), calc(100vw - 40px)"
+                                                srcset="
+//palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=180 180w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=240 240w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=300 300w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=360 360w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=400 400w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=460 460w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=540 540w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=560 560w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=590 590w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=606 606w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=630 630w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=670 670w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=720 720w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=738 738w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=770 770w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=814 814w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=900 900w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1024 1024w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1080 1080w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1296 1296w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1410 1410w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1512 1512w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1524 1524w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1728 1728w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=1950 1950w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=2100 2100w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=2260 2260w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/products/java-vest-ivory-tops-alohas-795974_31d3d956-0314-44dd-b604-711e671734c0.jpg?v=1666894896&amp;width=2362 2362w"
+                                                class="" style="border-radius: 32px;">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="sticky-text sticky-text--static"
+                                    style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36);"
+                                    data-sticky-card-text="">
+                                    <div class="sticky-text__inner">
+                                        <div class="sticky-text__heading h2">Discover timeless pieces and chic ensembles
+                                            to
+                                            elevate your world.</div>
+                                        <div class="sticky-text__buttons main-buttons">
+                                            <div class="sticky-text__button main-buttons__item">
+                                                <a href="/collections/homepage"
+                                                    class="btn btn--solid btn--medium btn--black"
+                                                    aria-label="Shop Bestsellers">
+                                                    Shop Bestsellers
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sticky-image-cards__wrapper spillover" data-sticky-card-wrapper="" data-index="2"
+                        style="--row-height: 447px; --item-height: 631px; --item-double-height: 1262px;">
+                        <div class="sticky-image-cards__holder" data-sticky-card-holder="">
+                            <div class="sticky-image-cards__inner" data-sticky-card-inner="">
+                                <div class="sticky-image-cards__image" data-sticky-card-image="">
+
+                                    <div class="image-fill image-wrapper aspect-ratio" style=" ">
+                                        <figure class="lazy-image background-size-cover" style="">
+                                            <img src="//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?crop=center&amp;height=1200&amp;v=1718727842&amp;width=967"
+                                                alt="melodrama-top-ivory-tops-alohas-377206_1.jpg" width="967"
+                                                height="1200" loading="lazy"
+                                                sizes="(min-width: 1024px) calc((100vw - 120px) * 0.5), (min-width: 768px) calc((100vw - 40px) / 4), calc(100vw - 40px)"
+                                                srcset="
+//palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=180 180w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=240 240w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=300 300w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=360 360w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=400 400w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=460 460w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=540 540w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=560 560w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=590 590w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=606 606w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=630 630w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=670 670w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=720 720w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=738 738w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=770 770w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=814 814w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=900 900w, //palo-alto-theme-vibrant.myshopify.com/cdn/shop/files/melodrama-top-ivory-tops-alohas-377206_1.jpg?v=1718727842&amp;width=967 967w"
+                                                class="" style="object-position:87.0695% 2.8969%;border-radius: 32px;">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="sticky-text sticky-text--static"
+                                    style="--adjust-heading-desktop: calc(var(--FONT-ADJUST-HEADING) * 1.6); --adjust-heading-mobile: calc(var(--FONT-ADJUST-HEADING) * 1.36);"
+                                    data-sticky-card-text="">
+                                    <div class="sticky-text__inner">
+                                        <div class="sticky-text__subheading subheading-text main-subheading">Summer 2024
+                                        </div>
+                                        <div class="sticky-text__heading h2">Stand out wherever you go. Our latest
+                                            lookbook
+                                            has dropped and is ready to shop.</div>
+                                        <div class="sticky-text__buttons main-buttons">
+                                            <div class="sticky-text__button main-buttons__item">
+                                                <a href="/pages/lookbook" class="btn btn--solid btn--medium btn--black"
+                                                    aria-label="View lookbook">
+                                                    View lookbook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky-image-cards__height" data-sticky-vh=""></div>
+        </section>
+
+
+    </div>
+</body>
+
+</html>
