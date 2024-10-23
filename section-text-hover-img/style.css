@@ -20,7 +20,7 @@ body {
     line-height: 1.6;
 }
 
-.clothing-range {
+.pk-clothing-range {
     position: relative;
     width: 100%;
     height: 90vh;
@@ -28,7 +28,7 @@ body {
     overflow: hidden;
 }
 
-.clothing-range .background-image {
+.pk-clothing-range .pk-background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,10 +36,10 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: all .8s ease;
+    transition: all 1s;
 }
 
-.clothing-range .content {
+.pk-clothing-range .pk-content {
     position: relative;
     z-index: 1;
     display: flex;
@@ -52,7 +52,7 @@ body {
     padding: 20px;
 }
 
-.clothing-range .content .content-head {
+.pk-clothing-range .pk-content .pk-content-head {
     font-size: 12px;
     color: #F8F8F899;
     margin-bottom: 2rem;
@@ -61,7 +61,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.clothing-range .content .categories {
+.pk-clothing-range .pk-content .pk-categories {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +71,7 @@ body {
     width: 100%;
 }
 
-.clothing-range .content .categories .category {
+.pk-clothing-range .pk-content .pk-categories .pk-category {
     color: #FFFFFF66;
     cursor: pointer;
     transition: color 0.8s ease;
@@ -81,153 +81,153 @@ body {
     margin: 0 auto;
 }
 
-.clothing-range .content .categories .category:hover {
+.pk-clothing-range .pk-content .pk-categories .pk-category:hover {
     color: #FFFFFF;
 }
 
-.clothing-range .content .categories .category.active {
+.pk-clothing-range .pk-content .pk-categories .pk-category.active {
     color: #FFFFFF;
 }
 
 @media (max-width: 1075px) {
 
-    .clothing-range {
+    .pk-clothing-range {
         height: 70vh;
         margin-top: 6em;
     }
 
-    .clothing-range .content .categories {
+    .pk-clothing-range .pk-content .pk-categories {
         gap: .4em;
         margin-top: .5em;
     }
 
-    .clothing-range .content .categories .category {
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
         margin-top: 5px;
     }
 }
 
 @media (max-width: 750px) {
 
-    .clothing-range {
+    .pk-clothing-range {
         height: 60vh;
         margin-top: 6em;
 
     }
 
-    .clothing-range .content .categories {
+    .pk-clothing-range .pk-content .pk-categories {
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    .clothing-range .content .categories .category {
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
         font-size: 30px;
     }
 
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: 1.5em;
     }
 }
 
 @media (max-width: 611px) {
 
-    .clothing-range {
+    .pk-clothing-range {
         height: 60vh;
         margin-top: 6em;
 
     }
 
-    .clothing-range .content .categories {
+    .pk-clothing-range .pk-content .pk-categories {
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    .clothing-range .content .categories .category {
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
         font-size: 30px;
     }
 
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: .5em;
     }
 }
 
 @media (max-width: 581px) {
 
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: .3em;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: .5em;
     }
 }
 
 @media (max-width: 550px) {
 
-    .clothing-range .content .categories {
+    .pk-clothing-range .pk-content .pk-categories {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: 22%;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: 28%;
     }
 }
 
 @media (max-width: 475px) {
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: 16%;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: 24%;
     }
 }
 
 @media (max-width: 415px) {
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: 11%;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: 19%;
     }
 }
 
 @media (max-width: 375px) {
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: 1em;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: 1.5em;
     }
 }
 
 @media (max-width: 340px) {
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: .5em;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: 1.3em;
     }
 }
 
 @media (max-width: 300px) {
-    .clothing-range .content .categories .middle {
+    .pk-clothing-range .pk-content .pk-categories .pk-middle {
         margin-left: .1em;
     }
 
-    .clothing-range .content .categories .last {
+    .pk-clothing-range .pk-content .pk-categories .pk-last {
         margin-left: .5em;
     }
 }
