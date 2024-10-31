@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Produits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .container .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .container .header .title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .container .header .title .italic {
+            font-style: italic;
+        }
+
+        .container .header .description {
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Products Section - Swiper */
+        .container .swiper {
+            padding: 20px 10px;
+            margin: -20px -10px;
+            position: relative;
+        }
+
+        .container .swiper .swiper-button-prev,
+        .container .swiper .swiper-button-next {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: 2px solid #dbd8d8;
+            border-radius: 50%;
+            color: #535353;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: buttonPulse 2s infinite;
+        }
+
+        .container .swiper .swiper-button-prev:hover,
+        .container .swiper .swiper-button-next:hover {
+            background: #f3f0f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container .swiper .swiper-button-prev:after,
+        .container .swiper .swiper-button-next:after {
+            font-size: 18px;
+        }
+
+        .container .swiper .swiper-button-disabled {
+            display: none;
+        }
+
+        /* Product Card */
+        .container .swiper .product-card {
+            /* border: 1px solid #e0e0e0; */
+            /* border-radius: 8px; */
+            padding: 5px;
+            position: relative;
+        }
+
+        .container .swiper .product-card .best-seller {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #f0e6e6;
+            padding: 6px 12px;
+            /* border-radius: 4px; */
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        .container .swiper .product-card .product-image {
+            /* aspect-ratio: 1; définit un ratio largeur/hauteur de 1:1, créant ainsi un carré parfait */
+            aspect-ratio: 1;
+            background: #f1f0f077;
+            margin-bottom: 10px;
+            position: relative;
+            border: 2px solid #dbd8d8;
+            /* border-radius: 4px; */
+        }
+
+        /* .container .swiper .product-card .product-image .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } */
+
+        .container .swiper .product-card .product-image .cart-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            cursor: pointer;
+            border: 2px solid #dbd8d8;
+        }
+
+        .container .swiper .product-card .product-title {
+            font-size: 24px;
+            /* margin-bottom: 2px; */
+        }
+
+        .container .swiper .product-card .product-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .container .swiper .product-card .rating {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .container .swiper .product-card .rating .stars {
+            color: #4CAF50;
+            display: flex;
+            gap: 5px;
+            font-size: 18px;
+        }
+
+        .container .swiper .product-card .rating .reviews {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .container .swiper .product-card .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Bottom Section */
+        .container .bottom-section {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .container .bottom-section .bottom-left {
+            width: 100%;
+            background: #f0e6e6;
+            padding: 70px;
+            /* border-radius: 8px; */
+        }
+
+        .container .bottom-section .bottom-right {
+            width: 100%;
+            background: #f1f0f077;
+        }
+
+        .container .bottom-section .section-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .container .bottom-section .section-title .italic {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .container .bottom-section .section-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .container .bottom-section .discover-btn {
+            display: inline-block;
+            padding: 10px 40px;
+            border: 1px solid #333;
+            font-size: 16px;
+            /* border-radius: 4px; */
+            text-decoration: none;
+            color: #535353;
+            transition: all 0.3s ease;
+        }
+
+        .container .bottom-section .discover-btn:hover {
+            background: #535353;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.06);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .container .header .title {
+                font-size: 2rem;
+            }
+
+            .container .bottom-section {
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .container .bottom-section .bottom-right {
+                width: 100%;
+                min-height: 500px;
+            }
+
+            .container .bottom-section .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container .header .title {
+                font-size: 1.8rem;
+            }
+
+            .container .swiper .product-card {
+                padding: 10px;
+            }
+
+            .container .bottom-section {
+                padding: 20px;
+            }
+
+            .container .bottom-section .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Lorem <em class="italic">ipsum</em></h1>
+            <p class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptia. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit</p>
+        </div>
+
+        <!-- Products Slider -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Product 1 -->
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="best-seller">Best seller</div>
+                        <div class="product-image">
+                            <!-- <img class="product-img" src="https://via.placeholder.com/150" alt="Product Image"> -->
+                            <div class="cart-icon">🛒</div>
+                        </div>
+                        <h3 class="product-title">Lorem ipsum</h3>
+                        <p class="product-description">Lorem ipsum dolor sit amet</p>
+                        <div class="rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="reviews">123 avis</span>
+                        </div>
+                        <div class="price">16,99 €</div>
+                    </div>
+                </div>
+                <!-- Repeat for other products -->
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-pagination"
+                style="position: relative; margin-top: 4rem; --swiper-pagination-color: #000; --swiper-pagination-bullet-inactive-color: #999; --swiper-pagination-bullet-inactive-opacity: 0.5; --swiper-pagination-bullet-size: 8px; --swiper-pagination-bullet-horizontal-gap: 6px;">
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="bottom-left">
+                <h2 class="section-title">Lorem ipsum <em class="italic">Dolors</em></h2>
+                <p class="section-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore
+                    et dolore magna aliquyam erat, sed diam voluptia. At vero eos et accusam et justo duo dolores et ea
+                    rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+                <p class="section-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptia. At vero eos et
+                </p>
+                <a href="#" class="discover-btn">Découvrir</a>
+            </div>
+            <div class="bottom-right">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+                1200: {
+                    slidesPerView: 5,
+                }
+            }
+        });
+
+        // Dupliquer les produits pour la démo
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        const productTemplate = swiperWrapper.querySelector('.swiper-slide').cloneNode(true);
+
+        for (let i = 0; i < 4; i++) {
+            const newProduct = productTemplate.cloneNode(true);
+            if (i !== 0) newProduct.querySelector('.best-seller')?.remove();
+            swiperWrapper.appendChild(newProduct);
+        }
+    </script>
+</body>
+
+</html>
