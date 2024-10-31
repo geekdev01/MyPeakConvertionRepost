@@ -50,6 +50,34 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sg-grid-container .sg-card .sg-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .sg-grid-container .sg-card:hover .sg-card-img {
+            transform: scale(1.1);
+        }
+
+        .sg-grid-container .sg-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
         }
 
         .sg-grid-container .sg-card .sg-card-title {
@@ -57,23 +85,29 @@
             font-weight: bold;
             margin-bottom: 8px;
             text-transform: uppercase;
+            color: white;
+            position: relative;
+            z-index: 3;
         }
 
         .sg-grid-container .sg-card .sg-discover-btn {
             padding: 6px 30px;
             width: 100%;
             background: transparent;
-            border: 2px solid #c2c0c0;
+            border: 2px solid #ffffff;
             font-size: 14px;
             /* border-radius: 4px; */
             cursor: pointer;
             transition: all 0.3s ease;
             width: fit-content;
+            color: white;
+            position: relative;
+            z-index: 3;
         }
 
         .sg-grid-container .sg-card .sg-discover-btn:hover {
-            background: #5e5d5d;
-            color: white;
+            background: #ffffff;
+            color: black;
         }
 
         /* Specific Card Styles */
@@ -126,6 +160,7 @@
     <div class="sg-grid-container">
         <div class="sg-left-section">
             <div class="sg-card sg-contenants-card">
+                <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Nos Produits" class="sg-card-img">
                 <h2 class="sg-card-title">Nos Produits</h2>
                 <button class="sg-discover-btn">Explorer</button>
             </div>
@@ -133,11 +168,13 @@
 
         <div class="sg-right-section">
             <div class="sg-card">
+                <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg" alt="Promotions" class="sg-card-img">
                 <h2 class="sg-card-title">Promotions</h2>
                 <button class="sg-discover-btn">Explorer</button>
             </div>
 
             <div class="sg-card">
+                <img src="https://img.freepik.com/photos-gratuite/vetements-enfants-colores-cintres_23-2147663897.jpg" alt="Collection Enfant" class="sg-card-img">
                 <h2 class="sg-card-title">Collection Enfant</h2>
                 <button class="sg-discover-btn">Explorer</button>
             </div>
@@ -147,4 +184,3 @@
 </body>
 
 </html>
-

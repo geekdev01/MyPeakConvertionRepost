@@ -110,11 +110,12 @@
             /* border-radius: 4px; */
         }
 
-        /* .container .swiper .product-card .product-image .product-img {
+        .container .swiper .product-card .product-image .product-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        } */
+            position: absolute; top: 0; left: 0; z-index: -1;
+        }
 
         .container .swiper .product-card .product-image .cart-icon {
             position: absolute;
@@ -164,61 +165,11 @@
         }
 
         .container .swiper .product-card .price {
-            font-size: 1.1rem;
+            font-size: 18px;
             font-weight: bold;
         }
 
-        /* Bottom Section */
-        .container .bottom-section {
-            display: flex;
-            margin-top: 40px;
-        }
-
-        .container .bottom-section .bottom-left {
-            width: 100%;
-            background: #f0e6e6;
-            padding: 70px;
-            /* border-radius: 8px; */
-        }
-
-        .container .bottom-section .bottom-right {
-            width: 100%;
-            background: #f1f0f077;
-        }
-
-        .container .bottom-section .section-title {
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
-
-        .container .bottom-section .section-title .italic {
-            font-style: italic;
-            font-weight: 400;
-        }
-
-        .container .bottom-section .section-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-
-        .container .bottom-section .discover-btn {
-            display: inline-block;
-            padding: 10px 40px;
-            border: 1px solid #333;
-            font-size: 16px;
-            /* border-radius: 4px; */
-            text-decoration: none;
-            color: #535353;
-            transition: all 0.3s ease;
-        }
-
-        .container .bottom-section .discover-btn:hover {
-            background: #535353;
-            color: #fff;
-        }
-
+   
         /* Animations */
         @keyframes buttonPulse {
             0% {
@@ -247,7 +198,7 @@
             .container .bottom-section {
                 display: flex;
                 flex-direction: column;
-                padding: 30px;
+                padding: 15px;
             }
 
             .container .bottom-section .bottom-right {
@@ -269,8 +220,41 @@
                 padding: 10px;
             }
 
+            .container .swiper .product-card .product-title {
+                font-size: 26px;
+                margin-bottom: 6px;
+            }
+
+            .container .swiper .product-card .product-description {
+                font-size: 16px;
+            }
+
+            .container .swiper .product-card .rating {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .container .swiper .product-card .rating .stars {
+                font-size: 22px;
+            }
+
+            .container .swiper .product-card .rating .reviews {
+                font-size: 16px;
+                margin-top: 5px;
+            }
+
+            .container .swiper .product-card .price {
+                font-size: 18px;
+            }
+
             .container .bottom-section {
-                padding: 20px;
+                padding: 10px;
+            }
+
+            .container .bottom-section .bbottom-left {
+                padding: 5px;
             }
 
             .container .bottom-section .section-title {
@@ -285,7 +269,8 @@
         <!-- Header -->
         <div class="header">
             <h1 class="title">Lorem <em class="italic">ipsum</em></h1>
-            <p class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            <p class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor invidunt ut labore
                 et dolore magna aliquyam erat, sed diam voluptia. At vero eos et accusam et justo duo dolores et ea
                 rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
                 dolor sit</p>
@@ -299,7 +284,7 @@
                     <div class="product-card">
                         <div class="best-seller">Best seller</div>
                         <div class="product-image">
-                            <!-- <img class="product-img" src="https://via.placeholder.com/150" alt="Product Image"> -->
+                            <img class="product-img" src="https://img.freepik.com/photos-gratuite/vue-face-delicieux-beignets-chocolat_23-2148847130.jpg" alt="Product Image">
                             <div class="cart-icon">🛒</div>
                         </div>
                         <h3 class="product-title">Lorem ipsum</h3>
@@ -319,23 +304,6 @@
 
             <div class="swiper-pagination"
                 style="position: relative; margin-top: 4rem; --swiper-pagination-color: #000; --swiper-pagination-bullet-inactive-color: #999; --swiper-pagination-bullet-inactive-opacity: 0.5; --swiper-pagination-bullet-size: 8px; --swiper-pagination-bullet-horizontal-gap: 6px;">
-            </div>
-        </div>
-
-        <!-- Bottom Section -->
-        <div class="bottom-section">
-            <div class="bottom-left">
-                <h2 class="section-title">Lorem ipsum <em class="italic">Dolors</em></h2>
-                <p class="section-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore
-                    et dolore magna aliquyam erat, sed diam voluptia. At vero eos et accusam et justo duo dolores et ea
-                    rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
-                <p class="section-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptia. At vero eos et
-                </p>
-                <a href="#" class="discover-btn">Découvrir</a>
-            </div>
-            <div class="bottom-right">
             </div>
         </div>
     </div>
