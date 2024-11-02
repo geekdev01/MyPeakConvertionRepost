@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        /* Container */
+        .st-container {
+            border-top: solid #000000 0px;
+            border-bottom: solid #000000 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+    
+        .st-container .st-container-settings {
+            margin: 0 auto;
+            max-width: 160rem;
+            padding-top: 27px;
+            padding-bottom: 27px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    
+        /* Heading */
+        .st-container .st-testimonials-heading-pk {
+            text-align: center;
+        }
+    
+        .st-container .st-testimonials-heading-pk * {
+            margin: 0;
+            font-size: 26px;
+            color: #000000;
+            line-height: 130%;
+            text-transform: unset;
+            font-weight: 400;
+        }
+    
+        .st-container .st-testimonials-heading-pk strong {
+            font-weight: 700;
+            font-size: 28px;
+        }
+    
+        /* Rating */
+        .st-container .st-testimonials-rating-pk {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+    
+        .st-container .st-testimonials-rating-pk .st-testimonials-rating-text-pk {
+            margin: 0;
+            font-size: 16px;
+            color: ;
+            line-height: 130%;
+        }
+    
+        .st-container .st-testimonials-rating-pk .st-testimonials-stars-pk {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    
+        .st-container .st-testimonials-rating-pk .st-testimonials-stars-pk svg,
+        .st-container .st-testimonials-rating-pk .st-testimonials-stars-pk img {
+            display: block;
+            width: 16px;
+            height: 16px;
+            object-fit: cover;
+        }
+    
+        /* Slider */
+        .st-container .st-testimonials-slider-wrapper-pk {
+            margin-top: 15px;
+        }
+    
+        .st-container .st-testimonials-slider-pk {
+            padding: 8px;
+            overflow: visible !important;
+        }
+    
+        .st-container .st-testimonials-slider-pk.preview {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            gap: 20px;
+        }
+    
+        .st-container .st-testimonials-slider-pk.preview .st-testimonials-slide-pk {
+            width: 18%;
+        }
+    
+        .st-container .st-testimonials-slider-pk.preview .st-testimonials-slide-pk:not(:first-child) {
+            margin-left: 20px;
+        }
+    
+        /* Slide */
+        .st-container .st-testimonials-slide-pk {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px 16px;
+            border-radius: 30px;
+            border: 0px solid #000000;
+            background-color: #f8f8f8;
+            box-sizing: border-box !important;
+            height: auto !important;
+        }
+    
+        .st-container .st-testimonials-slide-pk .st-testimonials-title-pk {
+            margin: 0;
+            font-size: 12px;
+            color: #b8b8b8;
+            line-height: 130%;
+            text-transform: unset;
+        }
+    
+        .st-container .st-testimonials-slide-pk .st-testimonials-text-pk {
+            margin: 0;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #000000;
+            line-height: 150%;
+            text-transform: unset;
+            font-weight: 700;
+            font-family: Montserrat, sans-serif;
+            font-style: normal;
+        }
+    
+        /* Bottom section */
+        .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+            padding-right: 20px;
+        }
+    
+        .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk:before {
+            content: "" ";
+     position: absolute;
+            top: 0;
+            right: 0px;
+            color: black;
+            font-size: 50px;
+            line-height: 124%;
+        }
+    
+        .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk .st-testimonials-avatar-pk {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #DDDDDD;
+            overflow: hidden;
+        }
+    
+        .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk .st-testimonials-avatar-pk img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk .st-testimonials-author-pk {
+            margin: 0;
+            font-size: 16px;
+            color: #000000;
+            line-height: 130%;
+            text-transform: unset;
+            font-weight: 700;
+        }
+    
+        /* Navigation */
+        .st-container .st-testimonials-navigation-pk {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk,
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk {
+            position: static !important;
+            z-index: 2;
+            width: 32px;
+            height: 32px;
+            border: 0px solid #ffffff;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk svg,
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk svg {
+            height: 34px;
+            width: 34px;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk svg {
+            transform: rotate(180deg);
+            margin-left: 2px;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk svg {
+            margin-left: -2px;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk svg path,
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk svg path {
+            fill: #e6e6e6;
+            transition: all 0.3s ease 0s;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk:hover,
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk:hover {
+            transition: all 0.3s ease 0s;
+            border: 0px solid #ffffff;
+            background: #ffffff;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk:hover svg path,
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk:hover svg path {
+            fill: #a7a7a4;
+            transition: all 0.3s ease 0s;
+        }
+    
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk.swiper-button-disabled,
+        .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk.swiper-button-disabled {
+            opacity: 0.3;
+        }
+    
+        /* Pagination */
+        .st-container .st-testimonials-pagination-pk {
+            position: static !important;
+            min-width: 150px;
+            max-width: fit-content;
+            height: 6px !important;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            background-color: #d9d9d9 !important;
+            border-radius: 2px;
+        }
+    
+        .st-container .st-testimonials-pagination-pk .swiper-pagination-progressbar-fill {
+            background-color: #838383 !important;
+            border-radius: 20px;
+        }
+    
+        /* Bottom text */
+        .st-container .st-testimonials-bottom-text-pk {
+            text-align: center;
+            margin-top: 18px;
+        }
+    
+        .st-container .st-testimonials-bottom-text-pk * {
+            margin: 0;
+            font-size: 16px;
+            color: #000000;
+            line-height: 130%;
+            text-transform: unset;
+            text-decoration: none;
+            user-select: none;
+        }
+    
+        /* Desktop styles */
+        @media(min-width: 1024px) {
+    
+            /* Container */
+            .st-container {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+    
+            .st-container .st-container-settings {
+                padding: 0 5rem;
+                padding-top: 36px;
+                padding-bottom: 36px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+    
+            /* Heading */
+            .st-container .st-testimonials-heading-pk * {
+                font-size: 48px;
+            }
+    
+            .st-container .st-testimonials-heading-pk strong {
+                font-size: 50px;
+            }
+    
+            /* Rating */
+            .st-container .st-testimonials-rating-pk {
+                margin-top: 16px;
+            }
+    
+            .st-container .st-testimonials-rating-pk .st-testimonials-rating-text-pk {
+                font-size: 18px;
+            }
+    
+            /* Slider */
+            .st-container .st-testimonials-slider-wrapper-pk {
+                margin-top: 20px;
+            }
+    
+            .st-container .st-testimonials-slide-pk {
+                padding: 24px 24px;
+            }
+    
+            /* Content */
+            .st-container .st-testimonials-slide-pk .st-testimonials-title-pk {
+                font-size: 12px;
+            }
+    
+            .st-container .st-testimonials-slide-pk .st-testimonials-text-pk {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+    
+            .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk .st-testimonials-avatar-pk {
+                width: 62px;
+                height: 62px;
+            }
+    
+            .st-container .st-testimonials-slide-pk .st-testimonials-bottom-pk .st-testimonials-author-pk {
+                font-size: 18px;
+            }
+    
+            /* Navigation */
+            .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk,
+            .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk {
+                width: 34px;
+                height: 34px;
+                display: flex;
+            }
+    
+            .st-container .st-testimonials-navigation-pk .st-testimonials-btn-prev-pk svg,
+            .st-container .st-testimonials-navigation-pk .st-testimonials-btn-next-pk svg {
+                height: 42px;
+                width: 42px;
+            }
+    
+            /* Pagination */
+            .st-container .st-testimonials-pagination-pk {
+                min-width: 150px;
+                height: 6px !important;
+                display: flex !important;
+            }
+    
+            /* Bottom text */
+            .st-container .st-testimonials-bottom-text-pk {
+                margin-top: 24px;
+            }
+    
+            .st-container .st-testimonials-bottom-text-pk * {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="st-container st-testimonials-pk" style="background-color:#ffffff; background-image: ;">
+        <div class="st-container-settings">
+
+            <div class="st-testimonials-heading-pk">
+                <p>Over <strong>250+</strong> reviews on<br><em style="font-style: normal;"><span
+                            style="color: rgb(47, 118, 240);">G</span><span
+                            style="color: rgb(229, 47, 34);">o</span><span
+                            style="color: rgb(246, 173, 3);">o</span><span
+                            style="color: rgb(48, 117, 239);">g</span><span
+                            style="color: rgb(35, 154, 65);">l</span><span
+                            style="color: rgb(229, 47, 34);">e</span></em> from our <em>clients</em></p>
+            </div>
+
+
+            <div class="st-testimonials-rating-pk">
+                <p class="st-testimonials-rating-text-pk">4.8 /
+                    5.0</p>
+
+                <div class="st-testimonials-stars-pk">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+
+                        <path
+                            d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                            fill="#f4ac03"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+
+                        <path
+                            d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                            fill="#f4ac03"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+
+                        <path
+                            d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                            fill="#f4ac03"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+
+                        <path
+                            d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                            fill="#f4ac03"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+
+                        <path
+                            d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                            fill="#f4ac03"></path>
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <div class="st-testimonials-slider-wrapper-pk">
+                <div
+                    class="st-testimonials-slider-pk swiper swiper-creative swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
+                    <div class="swiper-wrapper" id="swiper-wrapper-6321113db410102aa8" aria-live="polite"
+                        style="transition-duration: 0ms; transform: translateX(calc(50% - 98px));">
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                            role="group" aria-label="3 / 7" data-swiper-slide-index="2"
+                            style="width: 196px; transition-duration: 0ms; z-index: 9; transform: translate3d(calc(-210% + 0px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Crop top</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/Ellipse_8-2.png?v=1677311285" alt=""
+                                        loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Elise A.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill=""></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                            role="group" aria-label="4 / 7" data-swiper-slide-index="3"
+                            style="width: 196px; transition-duration: 0ms; z-index: 10; transform: translate3d(calc(-210% - 216px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                COMPANY NAME</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/r4mscxasvnx7sihhlqdtpcd2p5z6.jpg?v=1674456915"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Malene S.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                            role="group" aria-label="5 / 7" data-swiper-slide-index="4"
+                            style="width: 196px; transition-duration: 0ms; z-index: 11; transform: translate3d(calc(-210% - 432px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                COMPANY NAME</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/8zi58aalu98hz85zajfpixn0qvzx.jpg?v=1675218412"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Bo C.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate" role="group"
+                            aria-label="6 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 12; transform: translate3d(calc(-210% - 648px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="5">
+
+
+                            <p class="st-testimonials-title-pk">
+                                The mug</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/w4hxlfq1kzxjazh4x1qywixt4xmi.jpg?v=1674456952"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Daniel R.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate" role="group"
+                            aria-label="7 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 13; transform: translate3d(calc(-210% - 864px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="6">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Halo Jeans</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/berbmmfa5caxji8j5prs1pp1bg56.jpg?v=1674456833"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Sammi B.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <defs>
+                                                <linearGradient id="gradpk5">
+                                                    <stop offset="0%" stop-color="#f4ac03"></stop>
+                                                    <stop offset="50%" stop-color="#f4ac03"></stop>
+                                                    <stop offset="50%" stop-color="white"></stop>
+                                                    <stop offset="100%" stop-color="white"></stop>
+                                                </linearGradient>
+                                            </defs>
+
+                                            <path stroke="#f4ac03"
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="url(#gradpk5)">
+                                            </path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide" role="group" aria-label="1 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 14; transform: translate3d(calc(-210% - 1080px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="0">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Black T-shirt</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/skincare-popularSkincareIngredients_2x_e43e31bd-1aae-411e-b068-627c76a0fe01.jpg?v=1699497358"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Lara S.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-visible" role="group"
+                            aria-label="2 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 15; transform: translate3d(calc(-210% - 1296px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="1">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Red shorts</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.23.46.png?v=1698283503"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Sandra L.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-visible swiper-slide-prev"
+                            role="group" aria-label="3 / 7" data-swiper-slide-index="2"
+                            style="width: 196px; transition-duration: 0ms; z-index: 16; transform: translate3d(calc(-105% - 1512px), calc(4% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(-2deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Crop top</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/Ellipse_8-2.png?v=1677311285" alt=""
+                                        loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Elise A.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill=""></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-visible swiper-slide-active"
+                            role="group" aria-label="4 / 7" data-swiper-slide-index="3"
+                            style="width: 196px; transition-duration: 0ms; z-index: 17; transform: translate3d(calc(-1728px), calc(0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                COMPANY NAME</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/r4mscxasvnx7sihhlqdtpcd2p5z6.jpg?v=1674456915"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Malene S.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-visible swiper-slide-next"
+                            role="group" aria-label="5 / 7" data-swiper-slide-index="4"
+                            style="width: 196px; transition-duration: 0ms; z-index: 16; transform: translate3d(calc(105% - 1944px), calc(4% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(2deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                COMPANY NAME</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/8zi58aalu98hz85zajfpixn0qvzx.jpg?v=1675218412"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Bo C.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-visible" role="group"
+                            aria-label="6 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 15; transform: translate3d(calc(210% - 2160px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="5">
+
+
+                            <p class="st-testimonials-title-pk">
+                                The mug</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/w4hxlfq1kzxjazh4x1qywixt4xmi.jpg?v=1674456952"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Daniel R.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide" role="group" aria-label="7 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 14; transform: translate3d(calc(210% - 2376px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="6">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Halo Jeans</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/berbmmfa5caxji8j5prs1pp1bg56.jpg?v=1674456833"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Sammi B.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <defs>
+                                                <linearGradient id="gradpk5">
+                                                    <stop offset="0%" stop-color="#f4ac03"></stop>
+                                                    <stop offset="50%" stop-color="#f4ac03"></stop>
+                                                    <stop offset="50%" stop-color="white"></stop>
+                                                    <stop offset="100%" stop-color="white"></stop>
+                                                </linearGradient>
+                                            </defs>
+
+                                            <path stroke="#f4ac03"
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="url(#gradpk5)">
+                                            </path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate" role="group"
+                            aria-label="1 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 13; transform: translate3d(calc(210% - 2592px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="0">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Black T-shirt</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/skincare-popularSkincareIngredients_2x_e43e31bd-1aae-411e-b068-627c76a0fe01.jpg?v=1699497358"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Lara S.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate" role="group"
+                            aria-label="2 / 7"
+                            style="width: 196px; transition-duration: 0ms; z-index: 12; transform: translate3d(calc(210% - 2808px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;"
+                            data-swiper-slide-index="1">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Red shorts</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/Screenshot_2023-10-26_at_09.23.46.png?v=1698283503"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Sandra L.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                            role="group" aria-label="3 / 7" data-swiper-slide-index="2"
+                            style="width: 196px; transition-duration: 0ms; z-index: 11; transform: translate3d(calc(210% - 3024px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                Crop top</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/Ellipse_8-2.png?v=1677311285" alt=""
+                                        loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Elise A.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill=""></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                            role="group" aria-label="4 / 7" data-swiper-slide-index="3"
+                            style="width: 196px; transition-duration: 0ms; z-index: 10; transform: translate3d(calc(210% - 3240px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                COMPANY NAME</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/r4mscxasvnx7sihhlqdtpcd2p5z6.jpg?v=1674456915"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Malene S.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="st-testimonials-slide-pk swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                            role="group" aria-label="5 / 7" data-swiper-slide-index="4"
+                            style="width: 196px; transition-duration: 0ms; z-index: 9; transform: translate3d(calc(210% - 3456px), calc(8% + 0px), calc(0px)) rotateX(0deg) rotateY(0deg) rotateZ(4deg) scale(1); opacity: 1; transform-origin: center center; margin-right: 20px;">
+
+
+                            <p class="st-testimonials-title-pk">
+                                COMPANY NAME</p>
+
+
+
+                            <p class="st-testimonials-text-pk">
+                                The real gem is the integrated smartphone app with guided classes and body tracking. I
+                                really like it.</p>
+
+
+                            <div class="st-testimonials-bottom-pk">
+
+                                <div class="st-testimonials-avatar-pk">
+
+                                    <img src="//section.store/cdn/shop/files/8zi58aalu98hz85zajfpixn0qvzx.jpg?v=1675218412"
+                                        alt="" loading="lazy">
+
+                                </div>
+
+                                <div class="st-testimonials-content-pk">
+
+                                    <p class="st-testimonials-author-pk">
+                                        Bo C.</p>
+
+
+
+                                    <div class="st-testimonials-stars-pk">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                            viewBox="0 0 20 19" fill="none">
+
+                                            <path
+                                                d="M10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0Z"
+                                                fill="#f4ac03"></path>
+                                        </svg>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+                <div class="st-testimonials-navigation-pk">
+                    <div class="st-testimonials-btn-prev-pk" tabindex="0" role="button" aria-label="Previous slide"
+                        aria-controls="swiper-wrapper-6321113db410102aa8">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g id="Left">
+                                <path
+                                    d="M14,17a1,1,0,0,1-.707-.293l-4-4a1,1,0,0,1,0-1.414l4-4a1,1,0,1,1,1.414,1.414L11.414,12l3.293,3.293A1,1,0,0,1,14,17Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div
+                        class="st-testimonials-pagination-pk swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal">
+                        <span class="swiper-pagination-progressbar-fill"
+                            style="transform: translate3d(0px, 0px, 0px) scaleX(0.571429) scaleY(1); transition-duration: 300ms;"></span>
+                    </div>
+                    <div class="st-testimonials-btn-next-pk" tabindex="0" role="button" aria-label="Next slide"
+                        aria-controls="swiper-wrapper-6321113db410102aa8">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g id="Left">
+                                <path
+                                    d="M14,17a1,1,0,0,1-.707-.293l-4-4a1,1,0,0,1,0-1.414l4-4a1,1,0,1,1,1.414,1.414L11.414,12l3.293,3.293A1,1,0,0,1,14,17Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="st-testimonials-bottom-text-pk">
+                <p><a href="https://google.com" title="https://google.com">Read more on <em
+                            style="font-style: normal;"><span style="color: rgb(47, 118, 240);">G</span><span
+                                style="color: rgb(229, 47, 34);">o</span><span
+                                style="color: rgb(246, 173, 3);">o</span><span
+                                style="color: rgb(48, 117, 239);">g</span><span
+                                style="color: rgb(35, 154, 65);">l</span><span
+                                style="color: rgb(229, 47, 34);">e</span></em></a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js"></script>
+
+    <script>
+        function initTestimonials9() {
+            let googleElement = document.querySelector(".st-testimonials-heading-pk em");
+            let googleText;
+            if (googleElement) {
+                googleText = googleElement.innerText;
+            }
+
+            let bottomElement = document.querySelector(".st-testimonials-bottom-text-pk em");
+            let bottomText;
+            if (bottomElement) {
+                bottomText = bottomElement.innerText;
+            }
+
+            if (googleElement && googleText.toLowerCase() === "google") {
+                googleElement.innerHTML = "";
+
+                const colors = ["#2F76F0", "#E52F22", "#F6AD03", "#3075EF", "#239A41", "#E52F22"];
+
+                for (let i = 0; i < googleText.length; i++) {
+                    let span = document.createElement("span");
+                    span.style.color = colors[i];
+                    span.textContent = googleText[i];
+                    googleElement.appendChild(span);
+                }
+                googleElement.style.fontStyle = "normal";
+            }
+            if (bottomElement && bottomText.toLowerCase() === "google") {
+                bottomElement.innerHTML = "";
+
+                const colors = ["#2F76F0", "#E52F22", "#F6AD03", "#3075EF", "#239A41", "#E52F22"];
+
+                for (let i = 0; i < bottomText.length; i++) {
+                    let span = document.createElement("span");
+                    span.style.color = colors[i];
+                    span.textContent = bottomText[i];
+                    bottomElement.appendChild(span);
+                }
+                bottomElement.style.fontStyle = "normal";
+            }
+            document.querySelector('.st-testimonials-slider-pk').classList.remove('preview');
+            const slider = new Swiper('.st-testimonials-slider-pk', {
+                speed: 300,
+                loop: true,
+                effect: "creative",
+                creativeEffect: {
+                    perspective: true,
+                    limitProgress: 2,
+                    prev: {
+                        translate: ['-105%', '4%', 0],
+                        rotate: [0, 0, -2],
+                        origin: "center"
+                    },
+                    next: {
+                        translate: ['105%', '4%', 0],
+                        rotate: [0, 0, 2],
+                        origin: "center"
+                    },
+                },
+                navigation: {
+                    nextEl: '.st-testimonials-btn-next-pk',
+                    prevEl: '.st-testimonials-btn-prev-pk'
+                },
+                pagination: {
+                    el: '.testimonials-pagination-pk',
+                    type: 'progressbar'
+                },
+                breakpoints: {
+                    320: {
+                        centeredSlides: true,
+                        spaceBetween: 20,
+                        slidesPerView: 1.2
+                    },
+                    768: {
+                        centeredSlides: true,
+                        spaceBetween: 20,
+                        slidesPerView: 3
+                    },
+                    1024: {
+                        centeredSlides: true,
+                        spaceBetween: 20,
+                        slidesPerView: 5
+                    }
+                }
+            })
+        }
+
+        document.addEventListener('DOMContentLoaded', initTestimonials9);
+
+    </script>
+
+</body>
+
+</html>
