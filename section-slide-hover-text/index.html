@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <style>
+        .sv-product-carousel {
+            max-width: 1200px;
+            /* margin: 0 auto; */
+            padding: 20px;
+        }
+
+        .sv-product-carousel .swiper {
+            width: 100%;
+            padding-bottom: 40px;
+        }
+
+        .sv-product-carousel .sv-product-slide {
+            position: relative;
+            width: 130px;
+            cursor: pointer;
+        }
+
+        .sv-product-carousel .sv-product-slide .sv-product-image {
+            width: 100%;
+            height: 130px;
+            border-radius: 50%;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+
+        .sv-product-carousel .sv-product-slide .sv-product-name {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: .01em;
+            color: #333;
+            transition: all .2s;
+        }
+
+        .sv-product-carousel .sv-product-slide .sv-product-name:hover {
+            color: #444444;
+        }
+
+        .sv-product-carousel .sv-hover-name {
+            position: fixed;
+            padding: 5px 10px;
+            background: rgb(255, 253, 253);
+            color: rgba(0, 0, 0, 0.8);
+            /* border-radius: 4px; */
+            border: 1px solid #000;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .sv-product-carousel .sv-product-slide {
+                width: 150px;
+            }
+            .sv-product-carousel .sv-product-slide .sv-product-image {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sv-product-carousel .sv-product-slide {
+                width: 140px;
+            }
+            .sv-product-carousel .sv-product-slide .sv-product-image {
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sv-product-carousel .sv-product-slide {
+                width: 150px;
+            }
+            .sv-product-carousel .sv-product-slide .sv-product-image {
+                height: 150px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="sv-product-carousel">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Best Sellers">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Best Sellers" class="sv-product-image">
+                        <div class="sv-product-name">Best Sellers</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Collabs">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="Collabs" class="sv-product-image">
+                        <div class="sv-product-name">Collabs</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Sling">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Sling" class="sv-product-image">
+                        <div class="sv-product-name">Sling</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Sport Canteen">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="Sport Canteen" class="sv-product-image">
+                        <div class="sv-product-name">Sport Canteen</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Straw Cups">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Straw Cups" class="sv-product-image">
+                        <div class="sv-product-name">Straw Cups</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Go Cup XL">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Go Cup XL" class="sv-product-image">
+                        <div class="sv-product-name">Go Cup XL</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Coffee">
+                        <img src="https://img.freepik.com/photos-gratuite/etiquettes-prix-vente-vendredi-noir_23-2148325119.jpg"" alt="Coffee" class="sv-product-image">
+                        <div class="sv-product-name">Coffee</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="sv-product-slide" data-name="Coolers & Bags">
+                        <img src="https://img.freepik.com/photos-gratuite/collection-vetements-suspendus-support_23-2148349823.jpg" alt="Coolers & Bags" class="sv-product-image">
+                        <div class="sv-product-name">Coolers & Bags</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sv-hover-name"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 3,
+                },
+                480: {
+                    slidesPerView: 3,
+                },
+                600: {
+                    slidesPerView: 4,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+                1024: {
+                    slidesPerView: 7,
+                }
+            }
+        });
+
+        // Hover effect
+        const hoverName = document.querySelector('.sv-hover-name');
+        const productSlides = document.querySelectorAll('.sv-product-slide');
+
+        productSlides.forEach(slide => {
+            let initialPosition = null;
+            let hoverTimeout = null;
+            
+            const showHoverName = (e) => {
+                const name = slide.getAttribute('data-name');
+                hoverName.textContent = name;
+                hoverName.style.display = 'block';
+
+                // Capture initial cursor position on enter
+                initialPosition = {
+                    x: e.pageX + 12,
+                    y: e.pageY + 20
+                };
+
+                // Ensure the hover name stays within viewport
+                const rightEdge = window.innerWidth - hoverName.offsetWidth - 10;
+                const topEdge = 10;
+
+                hoverName.style.left = `${Math.min(initialPosition.x, rightEdge)}px`;
+                hoverName.style.top = `${Math.max(initialPosition.y, topEdge)}px`;
+            };
+
+            const moveHoverName = (e) => {
+                if (initialPosition) {
+                    // Keep using initial position from mouseenter
+                    hoverName.style.left = `${initialPosition.x}px`;
+                    hoverName.style.top = `${initialPosition.y}px`;
+                }
+            };
+
+            const handleMouseEnter = (e) => {
+                hoverTimeout = setTimeout(() => showHoverName(e), 500);
+            };
+
+            const handleMouseLeave = () => {
+                clearTimeout(hoverTimeout);
+                hoverName.style.display = 'none';
+            };
+
+            slide.querySelector('.sv-product-image').addEventListener('mouseenter', handleMouseEnter);
+            slide.querySelector('.sv-product-name').addEventListener('mouseenter', handleMouseEnter);
+
+            slide.querySelector('.sv-product-image').addEventListener('mousemove', moveHoverName);
+            slide.querySelector('.sv-product-name').addEventListener('mousemove', moveHoverName);
+
+            slide.querySelector('.sv-product-image').addEventListener('mouseleave', handleMouseLeave);
+            slide.querySelector('.sv-product-name').addEventListener('mouseleave', handleMouseLeave);
+        });
+
+        //     slide.querySelector('.sv-product-image').addEventListener('mouseleave', () => {
+        //         hoverName.style.display = 'none';
+        //     });
+        //     slide.querySelector('.sv-product-name').addEventListener('mouseleave', () => {
+        //         hoverName.style.display = 'none';
+        //     });
+        // });
+
+    </script>
+</body>
+
+</html>
