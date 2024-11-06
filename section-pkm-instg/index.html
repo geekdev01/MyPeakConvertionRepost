@@ -169,7 +169,7 @@
         let SwiperTop = new Swiper('.swiperInstg', {
             spaceBetween: 10,
             centeredSlides: true,
-            speed: 7000,
+            speed: 6000,
             autoplay: {
                 delay: 1,
             },
@@ -181,7 +181,7 @@
                 0: {
                     slidesPerView: 1.2,
                     spaceBetween: 0,
-                    speed: 7000,
+                    speed: 6000,
                     autoplay: {
                         delay: 1,
                     },
@@ -189,7 +189,7 @@
                 769: {
                     slidesPerView: 2,
                     spaceBetween: 0,
-                    speed: 7000,
+                    speed: 6000,
                     autoplay: {
                         delay: 1,
                     },
@@ -197,9 +197,9 @@
                 1024: {
                     slidesPerView: 3,
                     spaceBetween: 0,
-                    speed: 7000,
+                    speed: 6000,
                     autoplay: {
-                        delay: 1,
+                        delay: 9, // Le délai en millisecondes avant que le prochain slide ne soit affiché
                     },
                 }
             }
@@ -208,11 +208,11 @@
         document.querySelectorAll('.swiper-slide').forEach(slide => {
             slide.addEventListener('mouseenter', () => {
                 SwiperTop.autoplay.stop();
-                SwiperTop.setTransition(0); // Arrête immédiatement la transition
+                SwiperTop.params.speed = 0; // Arrête immédiatement le défilement
             });
 
             slide.addEventListener('mouseleave', () => {
-                SwiperTop.setTransition(7000); // Remet la transition à la vitesse initiale
+                SwiperTop.params.speed = 6000; // Remet la vitesse initiale
                 SwiperTop.autoplay.start();
             });
         });
