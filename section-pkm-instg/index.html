@@ -208,9 +208,11 @@
         document.querySelectorAll('.swiper-slide').forEach(slide => {
             slide.addEventListener('mouseenter', () => {
                 SwiperTop.autoplay.stop();
+                SwiperTop.setTransition(0); // Arrête immédiatement la transition
             });
 
             slide.addEventListener('mouseleave', () => {
+                SwiperTop.setTransition(7000); // Remet la transition à la vitesse initiale
                 SwiperTop.autoplay.start();
             });
         });
