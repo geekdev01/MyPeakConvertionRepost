@@ -68,7 +68,7 @@
 
         .pkm-pd-product-card .pkm-pd-product-image-container {
             position: relative;
-            aspect-ratio: 3/4;
+            aspect-ratio: 2/2.3;
             overflow: hidden;
         }
 
@@ -201,7 +201,7 @@
                 content: '';
                 position: absolute;
                 /* top: 0; */
-                height: calc(100% - 5.5%);
+                height: calc(100% - 18.5%);
                 /* Ajusté pour s'arrêter au-dessus des informations produit */
                 width: 1px;
                 background: #c2c1c1;
@@ -209,7 +209,11 @@
             }
 
             .pkm-pd-product-grid::before {
-                left: 50%;
+                left: 49.9%;
+            }
+
+            .pkm-pd-product-grid::after {
+                left: 49.9%;
             }
 
             .pkm-pd-product-card:hover .pkm-pd-product-image-container .pkm-pd-product-image-hover {
@@ -294,7 +298,7 @@
                 content: '';
                 position: absolute;
                 /* top: 0; */
-                height: calc(100% - 10%);
+                height: calc(100% - 21%);
                 /* Ajusté pour s'arrêter au-dessus des informations produit */
                 width: 1px;
                 background: #c2c1c1;
