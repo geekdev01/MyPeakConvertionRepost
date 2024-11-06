@@ -10,7 +10,7 @@
 <body>
     <style>
         /* Section principale */
-        .sba2-section {
+        .pc-sba2-section {
             border-top: solid #000000 0px;
             border-bottom: solid #000000 0px;
             margin-top: 0px;
@@ -22,7 +22,7 @@
             background-color: #ffffff;
         }
 
-        .sba2-section .sba2-section-settings {
+        .pc-sba2-section .pc-sba2-section-settings {
             margin: 0 auto;
             padding-top: 27px;
             padding-bottom: 54px;
@@ -32,11 +32,11 @@
         }
 
         /* Heading */
-        .sba2-section .sba2-heading {
+        .pc-sba2-section .pc-sba2-heading {
             text-align: center;
         }
 
-        .sba2-section .sba2-heading * {
+        .pc-sba2-section .pc-sba2-heading * {
             margin: 0px;
             font-size: 24px;
             color: #000000;
@@ -47,7 +47,7 @@
         }
 
         /* Tabs */
-        .sba2-section .sba2-tabs-wrapper {
+        .pc-sba2-section .pc-sba2-tabs-wrapper {
             max-width: 320px;
             width: 100%;
             margin: 0 auto;
@@ -60,7 +60,7 @@
             height: 54px;
         }
 
-        .sba2-section .sba2-tabs-wrapper .sba2-tab {
+        .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-tab {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,12 +78,12 @@
             transition: all 0.25s ease 0s;
         }
 
-        .sba2-section .sba2-tabs-wrapper .sba2-tab.active {
+        .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-tab.active {
             color: #ffffff;
             transition: all 0.25s ease 0s;
         }
 
-        .sba2-section .sba2-tabs-wrapper .sba2-active-bg {
+        .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-active-bg {
             display: block !important;
             position: absolute;
             width: calc((100% / 2) + 4px);
@@ -97,7 +97,7 @@
         }
 
         /* Content */
-        .sba2-section .sba2-content {
+        .pc-sba2-section .pc-sba2-content {
             display: none;
             margin-top: 30px;
             grid-template-columns: 1fr;
@@ -105,11 +105,11 @@
             gap: 30px;
         }
 
-        .sba2-section .sba2-content.active {
+        .pc-sba2-section .pc-sba2-content.active {
             display: grid;
         }
 
-        .sba2-section .sba2-content .sba2-title {
+        .pc-sba2-section .pc-sba2-content .pc-sba2-title {
             margin: 0;
             text-align: left;
             text-transform: unset;
@@ -120,12 +120,12 @@
             font-weight: 700;
         }
 
-        .sba2-section .sba2-content .sba2-subtext {
+        .pc-sba2-section .pc-sba2-content .pc-sba2-subtext {
             text-align: left;
             margin-top: 10px;
         }
 
-        .sba2-section .sba2-content .sba2-subtext * {
+        .pc-sba2-section .pc-sba2-content .pc-sba2-subtext * {
             margin: 0;
             text-transform: unset;
             word-wrap: break-word;
@@ -134,12 +134,12 @@
             color: #b3b3b3;
         }
 
-        .sba2-section .sba2-content .sba2-text {
+        .pc-sba2-section .pc-sba2-content .pc-sba2-text {
             text-align: left;
             margin-top: 30px;
         }
 
-        .sba2-section .sba2-content .sba2-text * {
+        .pc-sba2-section .pc-sba2-content .pc-sba2-text * {
             margin: 0;
             text-transform: unset;
             word-wrap: break-word;
@@ -149,7 +149,7 @@
         }
 
         /* Button */
-        .sba2-section .sba2-button {
+        .pc-sba2-section .pc-sba2-button {
             width: 56px;
             height: 56px;
             border-radius: 50%;
@@ -164,7 +164,7 @@
             position: relative;
         }
 
-        .sba2-section .sba2-button::after {
+        .pc-sba2-section .pc-sba2-button::after {
             content: '';
             padding: 3px;
             display: inline-block;
@@ -173,7 +173,7 @@
             transform: rotate(-45deg) scale(100%) translateY(-50%);
         }
 
-        .sba2-section .sba2-button::before {
+        .pc-sba2-section .pc-sba2-button::before {
             content: '';
             padding: 3px;
             display: inline-block;
@@ -182,7 +182,7 @@
             transform: rotate(135deg) scale(100%) translateX(-50%);
         }
 
-        .sba2-section .sba2-button:before {
+        .pc-sba2-section .pc-sba2-button:before {
             content: '';
             height: calc(50% - 28px);
             top: 50%;
@@ -193,7 +193,7 @@
             position: absolute;
         }
 
-        .sba2-section .sba2-button:after {
+        .pc-sba2-section .pc-sba2-button:after {
             content: '';
             height: calc(50% - 28px);
             top: 50%;
@@ -205,24 +205,24 @@
         }
 
         /* Image */
-        .sba2-section .sba2-image-relative {
+        .pc-sba2-section .pc-sba2-image-relative {
             position: relative;
             height: 100%;
             aspect-ratio: 12/9;
         }
 
-        .sba2-section .sba2-image-relative img,
-        .sba2-section .sba2-image-relative svg {
+        .pc-sba2-section .pc-sba2-image-relative img,
+        .pc-sba2-section .pc-sba2-image-relative svg {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .sba2-section .sba2-image-relative svg {
+        .pc-sba2-section .pc-sba2-image-relative svg {
             background-color: #AFAFAF;
         }
 
-        .sba2-section .sba2-image-wrapper {
+        .pc-sba2-section .pc-sba2-image-wrapper {
             position: relative;
             border: 0px solid #000000;
             border-radius: 0px;
@@ -233,7 +233,7 @@
             overflow: hidden;
         }
 
-        .sba2-section .sba2-image-cursor {
+        .pc-sba2-section .pc-sba2-image-cursor {
             height: 100%;
             width: max-content;
             touch-action: none;
@@ -248,7 +248,7 @@
             left: var(--before-after-initial-drag-position, 0px);
         }
 
-        .sba2-section .sba2-image-cursor:before {
+        .pc-sba2-section .pc-sba2-image-cursor:before {
             content: '';
             height: calc(50% - 28px);
             top: 0;
@@ -258,7 +258,7 @@
             position: absolute;
         }
 
-        .sba2-section .sba2-image-cursor:after {
+        .pc-sba2-section .pc-sba2-image-cursor:after {
             content: '';
             height: calc(50% - 28px);
             bottom: 0;
@@ -269,8 +269,8 @@
         }
 
         /* Badges */
-        .sba2-section .sba2-before-badge,
-        .sba2-section .sba2-after-badge {
+        .pc-sba2-section .pc-sba2-before-badge,
+        .pc-sba2-section .pc-sba2-after-badge {
             position: absolute;
             top: 10px;
             padding: 10px 16px;
@@ -285,16 +285,16 @@
             color: #ffffff;
         }
 
-        .sba2-section .sba2-before-badge {
+        .pc-sba2-section .pc-sba2-before-badge {
             left: 10px;
         }
 
-        .sba2-section .sba2-after-badge {
+        .pc-sba2-section .pc-sba2-after-badge {
             right: 10px;
         }
 
         /* Media text */
-        .sba2-section .sba2-media-text {
+        .pc-sba2-section .pc-sba2-media-text {
             position: absolute;
             bottom: 10px;
             left: 50%;
@@ -302,7 +302,7 @@
             width: 70%;
         }
 
-        .sba2-section .sba2-media-text * {
+        .pc-sba2-section .pc-sba2-media-text * {
             margin: 0;
             text-align: center;
             text-transform: unset;
@@ -313,16 +313,16 @@
         }
 
         /* Layout */
-        .sba2-section .sba2-text-wrap {
+        .pc-sba2-section .pc-sba2-text-wrap {
             order: 2;
         }
 
-        .sba2-section .sba2-image-right {
+        .pc-sba2-section .pc-sba2-image-right {
             order: 1;
         }
 
         @media(min-width: 1024px) {
-            .sba2-section {
+            .pc-sba2-section {
                 margin-top: 0px;
                 margin-bottom: 0px;
                 margin-left: 0rem;
@@ -330,7 +330,7 @@
                 border-radius: 0px;
             }
 
-            .sba2-section .sba2-section-settings {
+            .pc-sba2-section .pc-sba2-section-settings {
                 padding: 0 5rem;
                 padding-top: 36px;
                 padding-bottom: 72px;
@@ -338,168 +338,168 @@
                 padding-right: 5rem;
             }
 
-            .sba2-section .sba2-heading {
+            .pc-sba2-section .pc-sba2-heading {
                 text-align: center;
             }
 
-            .sba2-section .sba2-heading * {
+            .pc-sba2-section .pc-sba2-heading * {
                 font-size: 40px;
             }
 
-            .sba2-section .sba2-tabs-wrapper {
+            .pc-sba2-section .pc-sba2-tabs-wrapper {
                 max-width: 380px;
                 margin-top: 40px;
             }
 
-            .sba2-section .sba2-tabs-wrapper .sba2-tab {
+            .pc-sba2-section .pc-sba2-tabs-wrapper .pc-sba2-tab {
                 font-size: 16px;
             }
 
-            .sba2-section .sba2-content {
+            .pc-sba2-section .pc-sba2-content {
                 margin-top: 60px;
                 grid-template-columns: 0.5fr 1fr;
                 gap: 40px;
             }
 
-            .sba2-section .sba2-content .sba2-title {
+            .pc-sba2-section .pc-sba2-content .pc-sba2-title {
                 text-align: left;
                 font-size: 40px;
             }
 
-            .sba2-section .sba2-content .sba2-subtext {
+            .pc-sba2-section .pc-sba2-content .pc-sba2-subtext {
                 text-align: left;
                 margin-top: 10px;
             }
 
-            .sba2-section .sba2-content .sba2-subtext * {
+            .pc-sba2-section .pc-sba2-content .pc-sba2-subtext * {
                 font-size: 30px;
             }
 
-            .sba2-section .sba2-content .sba2-text {
+            .pc-sba2-section .pc-sba2-content .pc-sba2-text {
                 text-align: left;
                 margin-top: 50px;
             }
 
-            .sba2-section .sba2-content .sba2-text * {
+            .pc-sba2-section .pc-sba2-content .pc-sba2-text * {
                 font-size: 20px;
             }
 
-            .sba2-section .sba2-button {
+            .pc-sba2-section .pc-sba2-button {
                 width: 56px;
                 height: 56px;
             }
 
-            .sba2-section .sba2-button::after {
+            .pc-sba2-section .pc-sba2-button::after {
                 transform: rotate(-45deg) scale(100%) translateY(-50%);
                 height: calc(50% - 28px);
             }
 
-            .sba2-section .sba2-button::before {
+            .pc-sba2-section .pc-sba2-button::before {
                 transform: rotate(135deg) scale(100%) translateX(-50%);
                 height: calc(50% - 28px);
             }
 
-            .sba2-section .sba2-image-cursor:before {
+            .pc-sba2-section .pc-sba2-image-cursor:before {
                 height: calc(50% - 28px);
             }
 
-            .sba2-section .sba2-image-cursor:after {
+            .pc-sba2-section .pc-sba2-image-cursor:after {
                 height: calc(50% - 28px);
             }
 
-            .sba2-section .sba2-before-badge,
-            .sba2-section .sba2-after-badge {
+            .pc-sba2-section .pc-sba2-before-badge,
+            .pc-sba2-section .pc-sba2-after-badge {
                 padding: 10px 16px;
                 font-size: 14px;
             }
 
-            .sba2-section .sba2-media-text {
+            .pc-sba2-section .pc-sba2-media-text {
                 width: 70%;
             }
 
-            .sba2-section .sba2-media-text * {
+            .pc-sba2-section .pc-sba2-media-text * {
                 font-size: 12px;
             }
 
-            .sba2-section .sba2-content {
+            .pc-sba2-section .pc-sba2-content {
                 grid-template-columns: 0.5fr 1fr;
             }
 
-            .sba2-section .sba2-text-wrap {
+            .pc-sba2-section .pc-sba2-text-wrap {
                 order: 1;
             }
 
-            .sba2-section .sba2-image-right {
+            .pc-sba2-section .pc-sba2-image-right {
                 order: 2;
             }
 
-            .sba2-section .sba2-image-relative {
+            .pc-sba2-section .pc-sba2-image-relative {
                 aspect-ratio: 12/9;
             }
         }
     </style>
 
-    <div class="sba2-section sba2-tabs">
-        <div class="sba2-section-settings">
+    <div class="pc-sba2-section pc-sba2-tabs">
+        <div class="pc-sba2-section-settings">
 
-            <div class="sba2-heading">
+            <div class="pc-sba2-heading">
                 <p>95% reduction in wrinkles in 8 weeks</p>
             </div>
 
-            <div class="sba2-tabs-wrapper">
+            <div class="pc-sba2-tabs-wrapper">
 
-                <p class="sba2-tab active" id="tab_WrK1" style="color: rgb(255, 255, 255);">Weeks 1-8</p>
+                <p class="pc-sba2-tab active" id="pc_tab_WrK1" style="color: rgb(255, 255, 255);">Weeks 1-8</p>
 
-                <p class="sba2-tab " id="tab_WrK2" style="color: rgb(0, 0, 0);">Weeks 8-12</p>
+                <p class="pc-sba2-tab " id="pc_tab_WrK2" style="color: rgb(0, 0, 0);">Weeks 8-12</p>
 
-                <div class="sba2-active-bg" style="width: 188.75px; transform: translateX(1.25px);"></div>
+                <div class="pc-sba2-active-bg" style="width: 188.75px; transform: translateX(1.25px);"></div>
             </div>
-            <div class="sba2-content-wrap">
+            <div class="pc-sba2-content-wrap">
 
-                <div class="sba2-content active" data-id="tab_WrK1">
-                    <div class="sba2-text-wrap">
+                <div class="pc-sba2-content active" data-id="pc_tab_WrK1">
+                    <div class="pc-sba2-text-wrap">
 
-                        <p class="sba2-title">Weeks 1-8</p>
+                        <p class="pc-sba2-title">Weeks 1-8</p>
 
-                        <div class="sba2-subtext">
+                        <div class="pc-sba2-subtext">
                             <p>Daily application</p>
                         </div>
 
-                        <div class="sba2-text">
+                        <div class="pc-sba2-text">
                             <p>See visible improvement in skin texture and wrinkle reduction in the first weeks.</p>
                         </div>
 
                     </div>
-                    <div class="sba2-image-right">
-                        <div class="sba2-image-wrapper"
+                    <div class="pc-sba2-image-right">
+                        <div class="pc-sba2-image-wrapper"
                             style="--before-after-initial-drag-position: 50%; --clip-path-offset: 23.75px;">
 
-                            <div class="sba2-image-relative">
+                            <div class="pc-sba2-image-relative">
 
                                 <img src="https://img.freepik.com/photos-gratuite/fond-texture-noir-elegant_24972-2468.jpg"
-                                    alt="" draggable="false" class="sba2-image sba2-image-first">
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-first">
 
-                                <p class="sba2-before-badge">
+                                <p class="pc-sba2-before-badge">
                                     Before</p>
                             </div>
-                            <div class="sba2-image-relative"
+                            <div class="pc-sba2-image-relative"
                                 style="clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px))); position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
 
                                 <img src="https://img.freepik.com/photos-gratuite/texture-mur-stuc-noir-relief-decoratif-abstrait-grunge-fond-couleur-rugueuse-grand-angle_1258-28311.jpg"
-                                    alt="" draggable="false" class="sba2-image sba2-image-second">
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-second">
 
-                                <p class="sba2-after-badge">
+                                <p class="pc-sba2-after-badge">
                                     Week 8</p>
                             </div>
 
                             <div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
-                                <split-cursor class="sba2-image-cursor">
-                                    <div class="sba2-button">
+                                <split-cursor class="pc-sba2-image-cursor">
+                                    <div class="pc-sba2-button">
                                     </div>
                                 </split-cursor>
                             </div>
 
-                            <div class="sba2-media-text">
+                            <div class="pc-sba2-media-text">
                                 <p>*Results may vary depending on skin type, age, lifestyle factors and consistency of
                                     use.</p>
                             </div>
@@ -508,50 +508,50 @@
                     </div>
                 </div>
 
-                <div class="sba2-content" data-id="tab_WrK2">
-                    <div class="sba2-text-wrap">
+                <div class="pc-sba2-content" data-id="pc_tab_WrK2">
+                    <div class="pc-sba2-text-wrap">
 
-                        <p class="sba2-title">Weeks 8-12</p>
-                        <div class="sba2-subtext">
+                        <p class="pc-sba2-title">Weeks 8-12</p>
+                        <div class="pc-sba2-subtext">
                             <p>Maintenance treatment</p>
                         </div>
 
-                        <div class="sba2-text">
+                        <div class="pc-sba2-text">
                             <p>Maximum results achieved with continued use, showing significant wrinkle reduction and
                                 skin rejuvenation.</p>
                         </div>
 
                     </div>
-                    <div class="sba2-image-right">
-                        <div class="sba2-image-wrapper"
+                    <div class="pc-sba2-image-right">
+                        <div class="pc-sba2-image-wrapper"
                             style="--before-after-initial-drag-position: 50%; --clip-path-offset: 0px;">
 
-                            <div class="sba2-image-relative">
+                            <div class="pc-sba2-image-relative">
 
                                 <img src="https://img.freepik.com/photos-gratuite/texture-ardoise-noire_1194-6185.jpg"
-                                    alt="" draggable="false" class="sba2-image sba2-image-first">
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-first">
 
-                                <p class="sba2-before-badge">
+                                <p class="pc-sba2-before-badge">
                                     Week 8</p>
                             </div>
-                            <div class="sba2-image-relative"
+                            <div class="pc-sba2-image-relative"
                                 style="clip-path: inset(0 0 0 calc(var(--before-after-initial-drag-position, 50%) + var(--clip-path-offset, 0px))); position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
 
                                 <img src="https://img.freepik.com/photos-gratuite/fond-texture-noir-elegant_24972-2468.jpg"
-                                    alt="" draggable="false" class="sba2-image sba2-image-second">
+                                    alt="" draggable="false" class="pc-sba2-image pc-sba2-image-second">
 
-                                <p class="sba2-after-badge">
+                                <p class="pc-sba2-after-badge">
                                     Week 12</p>
                             </div>
 
                             <div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
-                                <split-cursor class="sba2-image-cursor">
-                                    <div class="sba2-button">
+                                <split-cursor class="pc-sba2-image-cursor">
+                                    <div class="pc-sba2-button">
                                     </div>
                                 </split-cursor>
                             </div>
 
-                            <div class="sba2-media-text">
+                            <div class="pc-sba2-media-text">
                                 <p>*Results may vary depending on skin type, age, lifestyle factors and consistency of
                                     use.</p>
                             </div>
@@ -566,11 +566,11 @@
 
     <script>
         function initBefAftImg() {
-            const tabs = document.querySelectorAll('.sba2-tab');
-            const tabsWrapper = document.querySelector('.sba2-tabs-wrapper');
-            const activeBg = document.querySelector('.sba2-active-bg');
-            const tabsContents = document.querySelectorAll('.sba2-content');
-            const imageWrappers = document.querySelectorAll('.sba2-image-wrapper');
+            const tabs = document.querySelectorAll('.pc-sba2-tab');
+            const tabsWrapper = document.querySelector('.pc-sba2-tabs-wrapper');
+            const activeBg = document.querySelector('.pc-sba2-active-bg');
+            const tabsContents = document.querySelectorAll('.pc-sba2-content');
+            const imageWrappers = document.querySelectorAll('.pc-sba2-image-wrapper');
 
             let initialActiveTab = tabs[0];
             initialActiveTab.classList.add('active');
@@ -626,7 +626,7 @@
             }
 
             imageWrappers.forEach(imageWrapper => {
-                const cursor = imageWrapper.querySelector('.sba2-image-cursor');
+                const cursor = imageWrapper.querySelector('.pc-sba2-image-cursor');
 
                 let xStart, xEnd, xDiff, originalOffset;
                 function dragStart(event) {
