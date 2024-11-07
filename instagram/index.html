@@ -241,7 +241,7 @@
             width: 80%;
             max-width: 400px;
             height: 80%;
-            max-height: 900px;
+            max-height: 710px;
             margin: 50px auto;
             border-radius: 25px;
             overflow: hidden;
@@ -279,17 +279,18 @@
             border-radius: 50%;
         }
 
+
         .pc-svi-video-features .story-popup .story-content .nav-button svg {
             width: 25px;
             color: #000;
         }
 
         .pc-svi-video-features .story-popup .story-content .nav-button.prev {
-            left: 31.5%;
+            left: 35.5%;
         }
 
         .pc-svi-video-features .story-popup .story-content .nav-button.next {
-            right: 31.5%;
+            right: 35.5%;
         }
 
         .pc-svi-video-features .story-popup .story-content #btn-pre:disabled {
@@ -334,7 +335,7 @@
             object-fit: cover;
         }
 
-        @media (max-width:1100px) {
+        @media (max-width:1024px) {
             .pc-svi-video-features .story-popup .story-content .nav-button.prev {
                 left: 25%;
             }
@@ -345,6 +346,19 @@
         }
 
         @media (max-width:960px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                position: fixed;
+                top: 30%;
+                transform: translateY(-50%);
+            }
+
+            .pc-svi-video-features .story-popup .story-content .story-video-content video {
+                width: 100%;
+                border-radius: 25px;
+                z-index: 10;
+                object-fit: cover;
+            }
+
             .pc-svi-video-features .story-popup .story-content .nav-button.prev {
                 left: 22%;
             }
@@ -355,6 +369,11 @@
         }
 
         @media (max-width:870px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
             .pc-svi-video-features .story-popup .story-content .nav-button.prev {
                 left: 18%;
             }
@@ -364,7 +383,20 @@
             }
         }
 
+        @media (max-width:860px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 26%;
+                transform: translateY(-50%);
+            }
+        }
+
         @media (max-width:795px) {
+
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 40%;
+                transform: translateY(-50%);
+            }
+
             .pc-svi-video-features .story-popup .story-content .nav-button.prev {
                 left: 16%;
             }
@@ -381,6 +413,10 @@
         }
 
         @media (max-width:690px) {
+            .pc-svi-video-features .story-popup .story-content {
+                margin: 50px auto;
+            }
+
             .swiper-slide .pagination_ {
                 display: none;
             }
@@ -416,6 +452,41 @@
         @media (max-width:600px) {
             .pc-svi-video-features .story-popup .story-content {
                 background: transparent;
+            }
+        }
+
+        @media (max-width:540px) {
+            .pc-svi-video-features .story-popup .story-content {
+                background: transparent;
+            }
+
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 45%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media (max-width:480px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 38%;
+            }
+        }
+
+        @media (max-width:380px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 50%;
+            }
+        }
+
+        @media (max-width:360px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 41%;
+            }
+        }
+
+        @media (max-width:345px) {
+            .pc-svi-video-features .story-popup .story-content .nav-button {
+                top: 35%;
             }
         }
     </style>
@@ -773,7 +844,7 @@
                         </svg >
                     `
                     :
-                    `
+                    `w
                     < svg xmlns = "http://www.w3.org/2000/svg" fill = "none" viewBox = "0 0 24 24" stroke - width="1.5"
                 stroke = "currentColor" class="size-6 tools-btn-son" >
                     <path stroke-linecap="round" stroke-linejoin="round"
