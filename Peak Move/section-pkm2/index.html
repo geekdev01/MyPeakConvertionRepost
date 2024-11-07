@@ -73,26 +73,27 @@
             }
 
             .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info {
-                padding: 15px 0;
-                text-align: left;
+                margin-top: 2px;
+                padding: 1px 0;
+                text-align: center;
             }
 
             .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-title {
-                font-size: 14px;
+                font-size: 16px;
                 margin-bottom: 8px;
-                color: #333;
+                color: #494949;
             }
 
             .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price {
                 font-size: 16px;
-                color: #333;
+                color: #261D09;
                 display: flex;
                 justify-content: center;
                 gap: 10px;
             }
 
             .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price .pkm2-sale-price {
-                color: #e53e3e;
+                color: #CA1818;
             }
 
             .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price .pkm2-original-price {
@@ -109,7 +110,7 @@
                 background: #333;
                 text-align: center;
                 color: white;
-                padding: 12px 24px;
+                padding: 14px 24px;
                 border: none;
                 cursor: pointer;
                 transition: all 0.3s ease;
@@ -119,18 +120,8 @@
                 white-space: nowrap;
             }
 
-            /* .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-view-more-btn::after {
-                background-image: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.25), transparent);
-                content: "";
-                transform: skew(-20deg);
-            }
-
-            .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-view-more-btn:hover::after {
-                animation: shinojutsu 0.75s cubic-bezier(0.01, 0.56, 1, 1);
-            } */
-
             .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card:hover .pkm2-view-more-btn {
-                bottom: 20px;
+                bottom: 16px;
                 opacity: 1;
             }
 
@@ -180,13 +171,6 @@
                 display: flex;
             }
 
-            /* .swiper-button-prev::after,
-            .swiper-button-next::after {
-                background-image: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.25), transparent);
-                content: "";
-                transform: skew(-20deg);
-            } */
-
             .swiper-button-prev:hover .swiper-button-prev::after,
             .swiper-button-next:hover .swiper-button-next::after {
                 animation: shinojutsu 0.75s cubic-bezier(0.01, 0.56, 1, 1);
@@ -216,6 +200,13 @@
             }
 
             @media (max-width: 480px) {
+                .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-title {
+                    font-size: 15px;
+                }
+
+                .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-product-info .pkm2-product-price {
+                    font-size: 17px;
+                }
 
                 .pkm2-dresses-section .swiper-button-prev,
                 .pkm2-dresses-section .swiper-button-next {
@@ -241,6 +232,11 @@
                     background: #111111;
                     border-radius: 2px;
                 }
+
+                .pkm2-dresses-section .swiper .swiper-slide .pkm2-product-card .pkm2-view-more-btn {
+                    bottom: 14px;
+                    opacity: 1;
+                }
             }
         </style>
     </head>
@@ -265,8 +261,8 @@
                             <div class="pkm2-product-info">
                                 <h3 class="pkm2-product-title">Robe Maxi Ceinturée</h3>
                                 <div class="pkm2-product-price">
-                                    <span class="pkm2-sale-price">$129.00</span>
                                     <span class="pkm2-original-price">$150.00</span>
+                                    <span class="pkm2-sale-price">$129.00</span>
                                 </div>
                             </div>
                         </div>
