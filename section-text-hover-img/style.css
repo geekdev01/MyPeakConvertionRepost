@@ -66,7 +66,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
     gap: 1em;
     width: 100%;
@@ -80,6 +80,7 @@ body {
     font-size: 56px;
     width: fit-content;
     margin: 0 auto;
+    text-align: center;
 }
 
 .pk-clothing-range .pk-content .pk-categories .pk-category:hover {
@@ -120,14 +121,12 @@ body {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        align-items: center;
     }
 
     .pk-clothing-range .pk-content .pk-categories .pk-category {
         font-size: 30px;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: 1.5em;
+        text-align: center;
     }
 }
 
@@ -144,25 +143,12 @@ body {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        align-items: center;
     }
 
     .pk-clothing-range .pk-content .pk-categories .pk-category {
         font-size: 30px;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: .5em;
-    }
-}
-
-@media (max-width: 581px) {
-
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: .3em;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: .5em;
+        text-align: center;
     }
 }
 
@@ -172,63 +158,6 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: 22%;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: 28%;
-    }
-}
-
-@media (max-width: 475px) {
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: 16%;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: 24%;
-    }
-}
-
-@media (max-width: 415px) {
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: 11%;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: 19%;
-    }
-}
-
-@media (max-width: 375px) {
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: 1em;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: 1.5em;
-    }
-}
-
-@media (max-width: 340px) {
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: .5em;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: 1.3em;
-    }
-}
-
-@media (max-width: 300px) {
-    .pk-clothing-range .pk-content .pk-categories .pk-middle {
-        margin-left: .1em;
-    }
-
-    .pk-clothing-range .pk-content .pk-categories .pk-last {
-        margin-left: .5em;
+        align-items: center;
     }
 }
