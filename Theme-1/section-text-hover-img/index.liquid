@@ -1,0 +1,517 @@
+<style>
+    {% comment %}
+    Attention ne fait plus jamais ca danns le code
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+    }
+
+    body {
+        line-height: 1.6;
+    }
+  {% endcomment %}
+    .pk-clothing-range {
+        position: relative;
+        width: {{section.settings.section_width}}%;
+        height: {{section.settings.section_height}}vh;
+        margin: 0 auto;
+        margin-top: {{section.settings.section_mt}}px;
+        margin-bottom: {{section.settings.section_mb}}px;
+        border-radius:{{section.settings.section_radius}}px;
+        overflow: hidden;
+    }
+
+    .pk-clothing-range .pk-background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block !important;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: all 1s;
+    }
+
+    .pk-clothing-range .pk-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .pk-clothing-range .pk-content .pk-content-head {
+        font-size:{{ section.settings.heading_size }}px;
+        color: {{section.settings.heading_color}};
+        margin-top: {{section.settings.heading_mt}}px;
+        margin-bottom: {{section.settings.heading_mb}}px;
+        font-weight: {{section.settings.heading_weight}};
+        width: {{section.settings.heading_width}}%;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 1em;
+        width: 100%;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-category {
+        color: {{section.settings.sub_heading_color}};
+        cursor: pointer;
+        transition: color 0.8s ease;
+        font-weight: {{section.settings.sub_heading_weight}};
+        font-size: {{section.settings.sub_heading_size}}px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-category:hover {
+        color: {{section.settings.heading_hover_color}};
+    }
+
+    .pk-clothing-range .pk-content .pk-categories .pk-category.active {
+        color: {{section.settings.heading_hover_color}};
+    }
+
+    @media (max-width: 1075px) {
+
+        .pk-clothing-range {
+            height: 70vh;
+            margin-top: 6em;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories {
+            gap: .4em;
+            margin-top: .5em;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-category {
+            margin-top: 5px;
+        }
+    }
+
+    @media (max-width: 750px) {
+
+        .pk-clothing-range {
+            height: 60vh;
+            margin-top: 6em;
+
+        }
+
+        .pk-clothing-range .pk-content .pk-categories {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-category {
+            font-size: {{ section.settings.sub_heading_mobile_size }}px;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: 1.5em;
+        }
+    }
+
+    @media (max-width: 611px) {
+
+        .pk-clothing-range {
+            height: 60vh;
+            margin-top: 6em;
+
+        }
+
+      .pk-clothing-range .pk-content .pk-content-head {
+        font-size:{{ section.settings.heading_mobile_size }}px;
+    }
+
+        .pk-clothing-range .pk-content .pk-categories {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-category {
+            font-size: {{ section.settings.sub_heading_mobile_size }}px;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: .5em;
+        }
+    }
+
+    @media (max-width: 581px) {
+
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: .3em;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: .5em;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        .pk-clothing-range .pk-content .pk-categories {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: 22%;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: 28%;
+        }
+    }
+
+    @media (max-width: 475px) {
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: 16%;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: 24%;
+        }
+    }
+
+    @media (max-width: 415px) {
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: 11%;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: 19%;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: 1em;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: 1.5em;
+        }
+    }
+
+    @media (max-width: 340px) {
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: .5em;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: 1.3em;
+        }
+    }
+
+    @media (max-width: 300px) {
+        .pk-clothing-range .pk-content .pk-categories .pk-middle {
+            margin-left: .1em;
+        }
+
+        .pk-clothing-range .pk-content .pk-categories .pk-last {
+            margin-left: .5em;
+        }
+    }
+</style>
+
+<div class="pk-clothing-range">
+  <div class="pk-background-image"></div>
+  <div class="pk-content">
+    <p class="pk-content-head">{{ section.settings.heading_text }}</p>
+    <div class="pk-categories">
+      {% for block in section.blocks %}
+        <h1
+          class="pk-category"
+          data-image="{% if block.settings.image != blank %}{{ block.settings.image | img_url: 'master' }}{% else %}https://berlin-lifestyle.myshopify.com/cdn/shop/files/hero1-2.5x-min.webp?v=1686901151&width=1500{% endif %}"
+        >
+          {{ block.settings.title }}
+        </h1>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+        const backgroundImage = document.querySelector('.pk-background-image');
+        const categories = document.querySelectorAll('.pk-category');
+        let activeCategory = null;
+
+        function changeBackground(imageSrc) {
+            backgroundImage.style.opacity = '0';
+            backgroundImage.style.backgroundImage = `url(${imageSrc})`;
+            backgroundImage.style.opacity = '1';
+        }
+
+        function setActiveCategory(category) {
+            if (activeCategory) {
+                activeCategory.classList.remove('active');
+            }
+            category.classList.add('active');
+            activeCategory = category;
+        }
+
+
+        categories.forEach(category => {
+            category.addEventListener('mouseenter', () => {
+                const imageSrc = category.getAttribute('data-image');
+                changeBackground(imageSrc);
+                setActiveCategory(category);
+            });
+        });
+
+        // Set initial background
+        changeBackground(categories[0].getAttribute('data-image'));
+        setActiveCategory(categories[0]);
+</script>
+
+{% schema %}
+{
+  "name": "Text Hover Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default":"Categories"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "default":12,
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_mobile_size",
+      "label": "Heading Mobile Size",
+      "default":12,
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "label": "Heading Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default":"#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "heading_hover_color",
+      "label": "Heading Hover Color",
+      "default":"#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_width",
+      "label": "Heading Width",
+      "default":100,
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "heading_mt",
+      "label": "Heading Margin Top",
+      "default":32,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_mb",
+      "label": "Heading Margin Bottom",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Sub Heading"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "label": "Sub Heading Size",
+      "default":56,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_mobile_size",
+      "label": "Sub Heading Mobile Size",
+      "default":30,
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_weight",
+      "label": "Sub Heading Weight",
+      "default":700,
+      "min": 100,
+      "max": 900,
+      "step": 100
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "Sub Heading Color",
+      "default":"#c5c1c1"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "label": "Section Width",
+      "default":100,
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Section Height",
+      "default":90,
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "unit": "vh"
+    },
+    {
+      "type": "range",
+      "id": "section_radius",
+      "label": "Section Radius",
+      "default":0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mt",
+      "label": "Section Margin Top",
+      "default":32,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_mb",
+      "label": "Section Margin Bottom",
+      "default":0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_image",
+      "name": "Text Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Hover Image",
+      "blocks": [
+        {
+          "type": "text_image",
+          "settings":
+            {
+              "title":"Carefree Classics",
+              "image":"",
+            }
+        },
+        {
+          "type": "text_image",
+          "settings":
+            {
+              "title":"Everyday Essentials",
+              "image":"",
+            }
+        },
+        {
+          "type": "text_image",
+          "settings":
+            {
+              "title":"Mellow Outfits",
+              "image":"",
+            }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}
