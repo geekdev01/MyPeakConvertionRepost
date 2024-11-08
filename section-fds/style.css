@@ -214,7 +214,7 @@
     padding: 13px 8px;
     font-weight: 600;
     font-size: 16px;
-    border-radius: 4px;  
+    border-radius: 4px;
     transition: background-color 0.5s;
 }
 
@@ -231,7 +231,7 @@
     scroll-margin-top: 20px;
 }
 
-.fds-container .fds-content-all .fds-content .fds-section  .fds-item{
+.fds-container .fds-content-all .fds-content .fds-section .fds-item {
     border-top: 1px solid #DDDDDD;
 }
 
@@ -303,9 +303,10 @@
         gap: 40px;
         padding: 18px 1.8em;
     }
-        .fds-container .fds-faq-head .fds-faq {
-            margin-left: 1em;
-        }
+
+    .fds-container .fds-faq-head .fds-faq {
+        margin-left: 1em;
+    }
 }
 
 @media (max-width:770px) {
@@ -336,17 +337,62 @@
         align-items: start;
         padding-right: 0em;
     }
-.fds-container .fds-faq-head .fds-menu-select {
-    width: 100%;
-}
+
+    .fds-container .fds-faq-head .fds-menu-select {
+        width: 100%;
+    }
+
     .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn {
         width: 100% !important;
     }
 }
 
 @media (max-width:400px) {
-.fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn {
+    .fds-container .fds-faq-head .fds-menu-select .fds-menu-select-btn {
         gap: 6.5em;
         padding: 6px;
+    }
+}
+
+@media (max-width:375px) {
+    .fds-container .fds-content-all {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px .1em;
+    }
+
+    .fds-container .fds-content-all .fds-menu {
+        width: 100% !important;
+
+    }
+
+    .fds-container .fds-content-all .fds-content .fds-section .fds-item {
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .fds-container .fds-content-all .fds-content .fds-question {
+        width: 95%;
+        padding: 16px 0;
+    }
+}
+
+@media (max-width:345px) {
+    .fds-container .fds-content-all {
+        width: 90%;
+        gap: 4px;
+        padding: 20px .1em;
+    }
+
+    .fds-container .fds-content-all .fds-menu {
+        width: 100% !important;
+    }
+
+    .fds-container .fds-content-all .fds-content .fds-section .fds-item {
+        border-top: 1px solid #DDDDDD;
+        width: 90%;
+    }
+
+    .fds-container .fds-content-all .fds-content .fds-question {
+        width: 90%;
     }
 }
